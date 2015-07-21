@@ -19,10 +19,6 @@ body {
     font-size: 35px;
 }
 
-#main ul {
-    padding-left: 20px;
-}
-
 #main .error {
     border: 1px solid red;
     background: #FDEFF0;
