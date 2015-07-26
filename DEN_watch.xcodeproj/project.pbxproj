@@ -21,6 +21,8 @@
 		638273C41B6462610065DFAB /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 638273C31B6462610065DFAB /* CustomObject.m */; };
 		638273C71B64632D0065DFAB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638273C51B64632D0065DFAB /* Bolts.framework */; };
 		638273C81B64632D0065DFAB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638273C61B64632D0065DFAB /* Parse.framework */; };
+		638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CA1B646E5F0065DFAB /* AlertHelper.swift */; };
+		638273CF1B6472970065DFAB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CE1B6472970065DFAB /* LoginVC.swift */; };
 		63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */; };
 		63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340C1B5C49A4008C23F3 /* ViewController.swift */; };
 		63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4340E1B5C49A4008C23F3 /* Main.storyboard */; };
@@ -110,6 +112,8 @@
 		638273C31B6462610065DFAB /* CustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomObject.m; sourceTree = "<group>"; };
 		638273C51B64632D0065DFAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		638273C61B64632D0065DFAB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		638273CA1B646E5F0065DFAB /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		638273CE1B6472970065DFAB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B4340C1B5C49A4008C23F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				638273A71B645DA80065DFAB /* SignUpVC.swift */,
 				638273C31B6462610065DFAB /* CustomObject.m */,
 				638273C21B6462610065DFAB /* DEN_watch-Bridging-Header.h */,
+				638273CA1B646E5F0065DFAB /* AlertHelper.swift */,
+				638273CE1B6472970065DFAB /* LoginVC.swift */,
 			);
 			path = DEN_watch;
 			sourceTree = "<group>";
@@ -483,7 +489,9 @@
 			files = (
 				63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */,
 				638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */,
+				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
+				638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */,
 				638273C41B6462610065DFAB /* CustomObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
