@@ -17,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnK-AI-P10">
-                                <rect key="frame" x="160" y="508" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6x-ws-JVI">
                                 <rect key="frame" x="139" y="193" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,7 +33,13 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qAk-NF-U10"/>
-                                    <segue destination="ufm-U8-rVg" kind="show" identifier="loginComplete" id="usM-in-hdf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnK-AI-P10">
+                                <rect key="frame" x="160" y="508" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="TE4-lw-TEX" kind="show" id="9H6-87-Txb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,13 +47,14 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="passwordField" destination="KZc-Ir-iMj" id="iQp-y3-Lbt"/>
+                        <outlet property="passwordField" destination="KZc-Ir-iMj" id="cA9-ol-Rn0"/>
                         <outlet property="userNameField" destination="n6x-ws-JVI" id="1tr-dL-PS3"/>
+                        <segue destination="qdV-pZ-7y2" kind="show" identifier="loginComplete" id="sYY-HK-IIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="742"/>
+            <point key="canvasLocation" x="724.5" y="737.5"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="zMp-oD-WjC">
@@ -75,7 +78,6 @@
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="createAccount:" destination="TE4-lw-TEX" eventType="touchUpInside" id="lWO-4T-nGX"/>
-                                    <segue destination="ufm-U8-rVg" kind="show" identifier="signUpComplete" id="hCL-QY-pBt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zid-qP-0Sl">
@@ -103,46 +105,43 @@
                         <outlet property="nameField" destination="7dm-B1-zGQ" id="bMn-DE-7b6"/>
                         <outlet property="passwordField" destination="MUV-J1-My2" id="412-we-lgq"/>
                         <outlet property="userNameField" destination="zid-qP-0Sl" id="VaS-iX-SFL"/>
+                        <segue destination="qdV-pZ-7y2" kind="show" identifier="signUpComplete" id="gVX-l5-HaI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlM-z4-y6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742.5" y="1492.5"/>
+            <point key="canvasLocation" x="742.5" y="1544.5"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="Nu5-WJ-XTc">
+        <!--PageVC-->
+        <scene sceneID="iS2-0A-xzu">
             <objects>
-                <pageViewController storyboardIdentifier="PageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hxq-eJ-4Zl" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="LVp-Rm-yvn" kind="show" id="WXI-Bq-oto"/>
-                    </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="miA-7c-F4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1773" y="1093"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="R79-ZF-JPX">
-            <objects>
-                <viewController id="ufm-U8-rVg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageVC" id="qdV-pZ-7y2" customClass="PageVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qgm-YJ-KuH"/>
-                        <viewControllerLayoutGuide type="bottom" id="hOq-iV-bQf"/>
+                        <viewControllerLayoutGuide type="top" id="uas-pH-rWs"/>
+                        <viewControllerLayoutGuide type="bottom" id="q6K-Li-5BW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MyR-no-8iO">
+                    <view key="view" contentMode="scaleToFill" id="34S-F8-P38">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KS9-gc-5Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3V4-Wh-6Sv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241.5" y="1092.5"/>
+            <point key="canvasLocation" x="1395" y="1132"/>
         </scene>
-        <!--View Controller-->
+        <!--PageVC-->
+        <scene sceneID="Nu5-WJ-XTc">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hxq-eJ-4Zl" customClass="PageVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="miA-7c-F4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.5" y="1120.5"/>
+        </scene>
+        <!--ProfileVC-->
         <scene sceneID="2dq-vz-8hw">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="LVp-Rm-yvn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="LVp-Rm-yvn" customClass="ProfileVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HhJ-No-cLm"/>
                         <viewControllerLayoutGuide type="bottom" id="rPq-Vx-AIK"/>
@@ -151,22 +150,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-2I-Ple">
-                                <rect key="frame" x="163" y="46" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-2I-Ple">
+                                <rect key="frame" x="163" y="46" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs1-tz-cUw">
+                                <rect key="frame" x="142" y="269" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e13-By-vAR">
+                                <rect key="frame" x="57" y="353" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ube-Yu-Bgz">
+                                <rect key="frame" x="163" y="129" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionField" destination="Vs1-tz-cUw" id="eOf-7L-TSB"/>
+                        <outlet property="descriptionLabel" destination="Vs1-tz-cUw" id="Pom-iv-A8z"/>
+                        <outlet property="emailField" destination="ube-Yu-Bgz" id="VhM-Oo-0dN"/>
+                        <outlet property="emailLabel" destination="ube-Yu-Bgz" id="wyt-1u-mHy"/>
+                        <outlet property="nameField" destination="5bl-2I-Ple" id="oBl-Ri-hFn"/>
+                        <outlet property="nameLabel" destination="8Ri-wW-EBp" id="nOJ-vX-p6s"/>
+                        <outlet property="pictureView" destination="e13-By-vAR" id="APN-xk-Edb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAc-Nf-v4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2667" y="965"/>
+        </scene>
+        <!--User ListVC-->
+        <scene sceneID="837-3Z-8Mg">
+            <objects>
+                <viewController id="jgE-58-xTT" customClass="UserListVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mIN-hF-vE0"/>
+                        <viewControllerLayoutGuide type="bottom" id="5N7-Re-Oem"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ln-fr-kRk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orp-Fn-kFM">
+                                <rect key="frame" x="279" y="20" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cAc-Nf-v4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6l-uR-Z4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="965"/>
+            <point key="canvasLocation" x="2667" y="1660"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="usM-in-hdf"/>
+        <segue reference="gVX-l5-HaI"/>
     </inferredMetricsTieBreakers>
 </document>

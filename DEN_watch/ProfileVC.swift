@@ -11,4 +11,9 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
+
+    @IBOutlet var nameLabel: UIView!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pictureView: UIImageView!
 }

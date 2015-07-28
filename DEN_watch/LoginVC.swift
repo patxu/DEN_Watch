@@ -25,7 +25,7 @@ class LoginVC: UIViewController{
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("success")
-                self.performSegueWithIdentifier("signUpComplete", sender: self)
+                self.performSegueWithIdentifier("loginComplete", sender: self)
             } else {
                 print("failure")
             }
