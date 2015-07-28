@@ -17,11 +17,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.pageTitles = NSArray(objects: "Explore", "Today Widget")
-        self.pageImages = NSArray(objects: "page1", "page2")
-        
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
         self.pageViewController.dataSource = self
         
         var startVC = self.viewControllerAtIndex(0) as UIViewController
@@ -45,11 +41,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
-        if ((self.pageTitles.count == 0) || (index >= self.pageTitles.count)) {
-            return UIViewController()
-        }
-        
-        var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageVC") as! UIViewController!
+        var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! UIViewController!
         
         return vc
     }

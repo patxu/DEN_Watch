@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724.5" y="737.5"/>
+            <point key="canvasLocation" x="742.5" y="766.5"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="zMp-oD-WjC">
@@ -115,7 +115,7 @@
         <!--PageVC-->
         <scene sceneID="iS2-0A-xzu">
             <objects>
-                <viewController storyboardIdentifier="PageVC" id="qdV-pZ-7y2" customClass="PageVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpperPageVC" id="qdV-pZ-7y2" customClass="PageVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uas-pH-rWs"/>
                         <viewControllerLayoutGuide type="bottom" id="q6K-Li-5BW"/>
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="1395" y="1132"/>
         </scene>
-        <!--PageVC-->
+        <!--Page View Controller-->
         <scene sceneID="Nu5-WJ-XTc">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hxq-eJ-4Zl" customClass="PageVC" customModule="DEN_watch" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hxq-eJ-4Zl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miA-7c-F4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.5" y="1120.5"/>
@@ -216,6 +216,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gVX-l5-HaI"/>
+        <segue reference="sYY-HK-IIW"/>
     </inferredMetricsTieBreakers>
 </document>
