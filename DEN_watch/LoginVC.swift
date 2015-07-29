@@ -16,6 +16,8 @@ class LoginVC: UIViewController{
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func loginPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("loginComplete", sender: self)
+
         if (userNameField.text!.isEmpty || passwordField.text!.isEmpty){
             let alert = AlertHelper.createAlert("All fields must be filled in")
             self.presentViewController(alert, animated: true, completion: nil)
@@ -25,7 +27,7 @@ class LoginVC: UIViewController{
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("success")
-                self.performSegueWithIdentifier("loginComplete", sender: self)
+//                self.performSegueWithIdentifier("loginComplete", sender: self)
             } else {
                 print("failure")
             }

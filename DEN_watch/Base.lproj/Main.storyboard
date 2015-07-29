@@ -49,7 +49,7 @@
                     <connections>
                         <outlet property="passwordField" destination="KZc-Ir-iMj" id="cA9-ol-Rn0"/>
                         <outlet property="userNameField" destination="n6x-ws-JVI" id="1tr-dL-PS3"/>
-                        <segue destination="qdV-pZ-7y2" kind="show" identifier="loginComplete" id="sYY-HK-IIW"/>
+                        <segue destination="qdV-pZ-7y2" kind="show" identifier="loginComplete" id="R0u-Ak-hAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,14 +150,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-2I-Ple">
-                                <rect key="frame" x="163" y="46" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs1-tz-cUw">
-                                <rect key="frame" x="142" y="269" width="88" height="21"/>
+                                <rect key="frame" x="141" y="269" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -171,16 +165,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-2I-Ple">
+                                <rect key="frame" x="163" y="46" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionField" destination="Vs1-tz-cUw" id="eOf-7L-TSB"/>
                         <outlet property="descriptionLabel" destination="Vs1-tz-cUw" id="Pom-iv-A8z"/>
-                        <outlet property="emailField" destination="ube-Yu-Bgz" id="VhM-Oo-0dN"/>
                         <outlet property="emailLabel" destination="ube-Yu-Bgz" id="wyt-1u-mHy"/>
-                        <outlet property="nameField" destination="5bl-2I-Ple" id="oBl-Ri-hFn"/>
-                        <outlet property="nameLabel" destination="8Ri-wW-EBp" id="nOJ-vX-p6s"/>
+                        <outlet property="nameLabel" destination="5bl-2I-Ple" id="9J9-R0-iLd"/>
                         <outlet property="pictureView" destination="e13-By-vAR" id="APN-xk-Edb"/>
                     </connections>
                 </viewController>
@@ -216,6 +213,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sYY-HK-IIW"/>
+        <segue reference="R0u-Ak-hAF"/>
     </inferredMetricsTieBreakers>
 </document>

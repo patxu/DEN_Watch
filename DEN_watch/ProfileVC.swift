@@ -11,9 +11,22 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
-
-    @IBOutlet var nameLabel: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
 }

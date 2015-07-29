@@ -26,12 +26,10 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
         self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
         
         self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
-        
+
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +40,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
         var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! UIViewController!
-        
+        print("view controller at index -> " + vc.description)
         return vc
     }
     
@@ -90,7 +88,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return self.pageTitles.count
+        return 0
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
