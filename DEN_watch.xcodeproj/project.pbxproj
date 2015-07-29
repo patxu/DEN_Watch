@@ -10,6 +10,19 @@
 		381A054E1B683D4900108BE1 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A054D1B683D4900108BE1 /* PageVC.swift */; };
 		384A60071B658D3E003B481D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A60061B658D3E003B481D /* ProfileVC.swift */; };
 		38938E211B68391200E85D2D /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38938E201B68391200E85D2D /* UserListVC.swift */; };
+		38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A76FA31B685B41009B54B1 /* DEN_Logo.png */; };
+		38A76FA61B686269009B54B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */; };
+		38C760C51B686D9C005DF586 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */; };
+		38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */; };
+		38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */; };
+		38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */; };
+		38C760CD1B687FCB005DF586 /* UIButtonBarArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */; };
+		38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */; };
+		38C760D11B688038005DF586 /* UIButtonBarArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */; };
+		38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */; };
+		38C760D71B688090005DF586 /* UIButtonBarArrowUpSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */; };
+		38C760D81B688090005DF586 /* UIButtonBarArrowDownSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */; };
+		38C760D91B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */; };
 		38F769F21B64759F0067D0E0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F769F01B64759F0067D0E0 /* Bolts.framework */; };
 		38F769F31B64759F0067D0E0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F769F11B64759F0067D0E0 /* Parse.framework */; };
 		638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273A71B645DA80065DFAB /* SignUpVC.swift */; };
@@ -104,6 +117,19 @@
 		381A054D1B683D4900108BE1 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		384A60061B658D3E003B481D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		38938E201B68391200E85D2D /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		38A76FA31B685B41009B54B1 /* DEN_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DEN_Logo.png; sourceTree = "<group>"; };
+		38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstCustomSegue.swift; path = ../FirstCustomSegue.swift; sourceTree = "<group>"; };
+		38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
+		38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowDown.png; sourceTree = "<group>"; };
+		38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowUp.png; sourceTree = "<group>"; };
+		38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowUp@2x.png"; sourceTree = "<group>"; };
+		38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowDown@2x.png"; sourceTree = "<group>"; };
+		38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowUpSmall@2x.png"; sourceTree = "<group>"; };
+		38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowUpSmall.png; sourceTree = "<group>"; };
+		38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowDownSmall.png; sourceTree = "<group>"; };
+		38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowDownSmall@2x.png"; sourceTree = "<group>"; };
 		38F769F01B64759F0067D0E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		38F769F11B64759F0067D0E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		638273A71B645DA80065DFAB /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -157,10 +183,12 @@
 				638273C11B6460C10065DFAB /* libz.1.dylib in Frameworks */,
 				638273B61B6460490065DFAB /* AudioToolbox.framework in Frameworks */,
 				638273B71B6460490065DFAB /* CFNetwork.framework in Frameworks */,
+				38C760C51B686D9C005DF586 /* FBSDKLoginKit.framework in Frameworks */,
 				638273B81B6460490065DFAB /* CoreGraphics.framework in Frameworks */,
 				638273B91B6460490065DFAB /* CoreLocation.framework in Frameworks */,
 				638273BA1B6460490065DFAB /* QuartzCore.framework in Frameworks */,
 				638273BB1B6460490065DFAB /* Security.framework in Frameworks */,
+				38A76FA61B686269009B54B1 /* FBSDKCoreKit.framework in Frameworks */,
 				38F769F21B64759F0067D0E0 /* Bolts.framework in Frameworks */,
 				638273BC1B6460490065DFAB /* StoreKit.framework in Frameworks */,
 				38F769F31B64759F0067D0E0 /* Parse.framework in Frameworks */,
@@ -192,9 +220,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38A76FA21B685B2A009B54B1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */,
+				38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */,
+				38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */,
+				38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */,
+				38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */,
+				38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */,
+				38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */,
+				38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */,
+				38A76FA31B685B41009B54B1 /* DEN_Logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		638273C91B64640C0065DFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */,
+				38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */,
 				38F769F01B64759F0067D0E0 /* Bolts.framework */,
 				38F769F11B64759F0067D0E0 /* Parse.framework */,
 				638273BF1B6460C10065DFAB /* libz.1.dylib */,
@@ -214,6 +260,7 @@
 		63B433FE1B5C49A4008C23F3 = {
 			isa = PBXGroup;
 			children = (
+				38A76FA21B685B2A009B54B1 /* Images */,
 				638273C91B64640C0065DFAB /* Frameworks */,
 				63B434091B5C49A4008C23F3 /* DEN_watch */,
 				63B4341E1B5C49A4008C23F3 /* DEN_watchTests */,
@@ -239,6 +286,8 @@
 		63B434091B5C49A4008C23F3 /* DEN_watch */ = {
 			isa = PBXGroup;
 			children = (
+				38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */,
+				38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */,
 				63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */,
 				63B4340C1B5C49A4008C23F3 /* ViewController.swift */,
 				63B4340E1B5C49A4008C23F3 /* Main.storyboard */,
@@ -455,8 +504,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C760D71B688090005DF586 /* UIButtonBarArrowUpSmall.png in Resources */,
+				38C760D81B688090005DF586 /* UIButtonBarArrowDownSmall.png in Resources */,
+				38C760CD1B687FCB005DF586 /* UIButtonBarArrowUp.png in Resources */,
 				63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */,
+				38C760D91B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png in Resources */,
+				38C760D11B688038005DF586 /* UIButtonBarArrowDown@2x.png in Resources */,
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
+				38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */,
+				38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */,
+				38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */,
+				38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */,
 				63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,8 +565,10 @@
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
 				638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */,
 				638273C41B6462610065DFAB /* CustomObject.m in Sources */,
+				38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */,
 				381A054E1B683D4900108BE1 /* PageVC.swift in Sources */,
 				38938E211B68391200E85D2D /* UserListVC.swift in Sources */,
+				38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
