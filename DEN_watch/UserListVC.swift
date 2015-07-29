@@ -16,9 +16,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userTable: UITableView!
     let textCellIdentifier = "TextCell"
     var userArray:NSMutableArray = []
-    
-    
-    let swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
+    var manager: LocationManager?
     
     override func viewDidLoad()
     {
@@ -29,6 +27,17 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         userTable.addSubview(refreshControl)
         userTable.delegate = self
         userTable.dataSource = self
+        
+        manager = LocationManager()
+        manager!.fetchWithCompletion {location, error in
+            // fetch location or an error
+            if let loc = location {
+                print(location)
+            } else if let err = error {
+                print(err.localizedDescription)
+            }
+            self.manager = nil
+        }
         
     }
     
@@ -76,7 +85,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(swiftBlogs[row])
+        print(userArray[row])
     }
     
     override func didReceiveMemoryWarning() {
