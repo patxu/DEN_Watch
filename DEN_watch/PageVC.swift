@@ -39,7 +39,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
-        var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! UIViewController!
+        var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UIViewController!
         print("view controller at index -> " + vc.description)
         return vc
     }
