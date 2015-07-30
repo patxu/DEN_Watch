@@ -19,7 +19,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     @IBAction func loginPressed(sender: AnyObject) {
 
         if (emailField.text!.isEmpty || passwordField.text!.isEmpty){
-            let alert = AlertHelper.createAlert("All fields must be filled in")
+            let alert = AlertHelper.createAlert("Please enter your login information.")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
@@ -57,14 +57,16 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // User is already logged in, go to next view controller.
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            // User is already logged in, do work such as go to next view controller.
+            print("already logged in")
+            self.performSegueWithIdentifier("alreadyLoggedIn", sender: self)
         }
         else {
             for view in self.view.subviews {
                 if view.isKindOfClass(FBSDKLoginButton) {
                     let loginView : FBSDKLoginButton = view as! FBSDKLoginButton
-                    loginView.readPermissions = ["public_profile", "email", "user_friends"]
+                    loginView.readPermissions = ["public_profile", "email"]
                     loginView.delegate = self
                 }
             }
@@ -97,11 +99,35 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         else {
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
+            if result.grantedPermissions.contains("email") && result.grantedPermissions.contains("public_profile")
             {
-                // Do work
+                self.returnUserData()
             }
+            //go to next VC
+            self.performSegueWithIdentifier("loginComplete", sender: self)
         }
+    }
+    
+    //call this method anytime after a user has logged in by calling self.returnUserData().
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print("User Name is: \(userName)")
+                let userEmail : NSString = result.valueForKey("email") as! NSString
+                print("User Email is: \(userEmail)")
+            }
+        })
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {

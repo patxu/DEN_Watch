@@ -16,6 +16,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userTable: UITableView!
     let textCellIdentifier = "TextCell"
     var userArray:NSMutableArray = []
+    var pageIndex: Int!
    
     
     let swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]

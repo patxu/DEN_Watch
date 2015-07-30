@@ -15,6 +15,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
+    var pageIndex: Int!
     
     override func viewDidLoad()
     {

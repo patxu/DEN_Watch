@@ -13,6 +13,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     var pageViewController: UIPageViewController!
     var pageTitles: NSArray!
     var pageImages: NSArray!
+    var index: Int!
     
     override func viewDidLoad()
     {
@@ -20,8 +21,9 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
         self.pageViewController.dataSource = self
         
-        var startVC = self.viewControllerAtIndex(0) as UIViewController
-        var viewControllers = NSArray(object: startVC)
+        index = 1
+        let startVC = self.viewControllerAtIndex(index) as UIViewController
+        let viewControllers = NSArray(object: startVC)
         
         self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
         
@@ -39,9 +41,18 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
-        var vc: UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UIViewController!
-        print("view controller at index -> " + vc.description)
-        return vc
+
+        if (index == 0) {
+            var vc: UserListVC = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
+            print("view controller at index -> " + vc.description)
+//            vc.pageIndex = index
+            return vc
+        } else {
+            var vc: ProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
+            print("view controller at index -> " + vc.description)
+//            vc.pageIndex = index
+            return vc
+        }
     }
     
     
@@ -50,7 +61,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
         
-        var vc = viewController as! UIViewController
+//        var vc = viewController as! UIViewController
 //        var index = vc.pageIndex as Int
 //        
 //        
@@ -61,13 +72,19 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
 //        }
         
 //        index--
-        return self.viewControllerAtIndex(0)
+        if (index == 1) {
+            index = 0
+        }
+        else if (index == 0) {
+            index = 1
+        }
+        return self.viewControllerAtIndex((index + 1)%2)
         
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var vc = viewController as! UIViewController
+//        var vc = viewController as! UIViewController
 //        var index = vc.pageIndex as Int
 //        
 //        if (index == NSNotFound)
@@ -81,14 +98,20 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
 //        {
 //            return nil
 //        }
-        
-        return self.viewControllerAtIndex(0)
+        if (index == 1) {
+            index = 0
+        }
+        else if (index == 0) {
+            index = 1
+        }
+        print((index + 1)%2)
+        return self.viewControllerAtIndex((index + 1)%2)
         
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return 0
+        return 2
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
