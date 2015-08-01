@@ -10,28 +10,50 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    //login
-    @IBAction func loginPressed(sender: AnyObject) {
-
+    //button action
+    @IBAction func loginPressed(sender: AnyObject) { login() }
+    
+    //login wtih email and password
+    func login(){
         if (emailField.text!.isEmpty || passwordField.text!.isEmpty){
-            let alert = AlertHelper.createAlert("Please enter your login information.")
+            let alert = AlertHelper.createAlert("Missing login information.")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         PFUser.logInWithUsernameInBackground(emailField.text!, password:passwordField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                print("success")
                 self.performSegueWithIdentifier("loginComplete", sender: self)
             } else {
-                print("failure")
+                var alert: UIViewController
+                switch error!.code {
+                case 101: //no such account
+                    alert = AlertHelper.createAlert("The account information does not match our records.")
+                default:
+                    alert = AlertHelper.createAlert(error!.localizedDescription)
+                }
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
             }
         }
+    }
+    
+    //text field delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder() //dismiss textfield
+        if (textField == emailField){
+            passwordField.becomeFirstResponder()
+        }
+        else if (textField == passwordField){
+            login()
+        }
+        return true;
+        
     }
     
     //return segue

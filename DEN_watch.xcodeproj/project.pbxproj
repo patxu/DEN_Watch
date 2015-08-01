@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		381A054E1B683D4900108BE1 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A054D1B683D4900108BE1 /* PageVC.swift */; };
+		384482A01B6C6BAA00ADAA6C /* missing-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3844829F1B6C6BAA00ADAA6C /* missing-picture.png */; };
 		384A60071B658D3E003B481D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A60061B658D3E003B481D /* ProfileVC.swift */; };
+		386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386FC1AE1B6C703200E1739C /* ViewUserVC.swift */; };
 		38938E211B68391200E85D2D /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38938E201B68391200E85D2D /* UserListVC.swift */; };
 		38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A76FA31B685B41009B54B1 /* DEN_Logo.png */; };
 		38A76FA61B686269009B54B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */; };
@@ -115,7 +117,9 @@
 
 /* Begin PBXFileReference section */
 		381A054D1B683D4900108BE1 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		3844829F1B6C6BAA00ADAA6C /* missing-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missing-picture.png"; sourceTree = "<group>"; };
 		384A60061B658D3E003B481D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		386FC1AE1B6C703200E1739C /* ViewUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserVC.swift; sourceTree = "<group>"; };
 		38938E201B68391200E85D2D /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		38A76FA31B685B41009B54B1 /* DEN_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DEN_Logo.png; sourceTree = "<group>"; };
 		38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		38A76FA21B685B2A009B54B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3844829F1B6C6BAA00ADAA6C /* missing-picture.png */,
 				38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */,
 				38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */,
 				38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */,
@@ -293,6 +298,7 @@
 				63B4340E1B5C49A4008C23F3 /* Main.storyboard */,
 				381A054D1B683D4900108BE1 /* PageVC.swift */,
 				384A60061B658D3E003B481D /* ProfileVC.swift */,
+				386FC1AE1B6C703200E1739C /* ViewUserVC.swift */,
 				63B434111B5C49A4008C23F3 /* Assets.xcassets */,
 				63B434131B5C49A4008C23F3 /* LaunchScreen.storyboard */,
 				63B434161B5C49A4008C23F3 /* Info.plist */,
@@ -509,6 +515,7 @@
 				38C760CD1B687FCB005DF586 /* UIButtonBarArrowUp.png in Resources */,
 				63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */,
 				38C760D91B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png in Resources */,
+				384482A01B6C6BAA00ADAA6C /* missing-picture.png in Resources */,
 				38C760D11B688038005DF586 /* UIButtonBarArrowDown@2x.png in Resources */,
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
 				38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */,
@@ -564,6 +571,7 @@
 				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
 				638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */,
+				386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */,
 				638273C41B6462610065DFAB /* CustomObject.m in Sources */,
 				38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */,
 				381A054E1B683D4900108BE1 /* PageVC.swift in Sources */,
