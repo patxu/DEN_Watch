@@ -1,5 +1,5 @@
 //
-//  ProfileVC.swift
+//  ViewUserVC.swift
 //  DEN_watch
 //
 //  Created by Smartwatch Project on 7/26/15.
@@ -8,13 +8,15 @@
 
 import Foundation
 import UIKit
+//import FontAwesome_swift
 
-class ProfileVC: UIViewController {
+class ViewUserVC: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var pictureView: UIImageView!    
+    @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad()
     {

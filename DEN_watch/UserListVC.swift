@@ -17,22 +17,17 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let textCellIdentifier = "TextCell"
     var userArray:NSMutableArray = []
     var pageIndex: Int!
-   
-    
-    let swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         var query = PFUser.query()!
-        //query.whereKey("username", equalTo:"foo")
-        var girls = query.findObjects()!
-        for value in girls{
-            self.userArray.addObject(value)
+        //query.whereKey("inDEN", equalTo: true)
+        for user in query.findObjects()!{
+            self.userArray.addObject(user)
         }
         userTable.delegate = self
         userTable.dataSource = self
-        
     }
     /*
     func loadParseData(){
@@ -73,7 +68,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(swiftBlogs[row])
+        self.performSegueWithIdentifier("viewUser", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
