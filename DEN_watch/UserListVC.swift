@@ -27,18 +27,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         userTable.addSubview(refreshControl)
         userTable.delegate = self
         userTable.dataSource = self
-        
-        manager = LocationManager()
-        manager!.fetchWithCompletion {location, error in
-            // fetch location or an error
-            if let loc = location {
-                print(location)
-            } else if let err = error {
-                print(err.localizedDescription)
-            }
-            self.manager = nil
-        }
-        
+                
     }
     
     

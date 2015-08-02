@@ -77,6 +77,17 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var locationManager = LocationManager.sharedInstance
+        locationManager.showVerboseMessage = true
+        locationManager.autoUpdate = false
+        locationManager.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) -> () in
+            
+            print("lat:\(latitude) lon:\(longitude) status:\(status) error:\(error)")
+            
+            print(verboseMessage)
+            
+        }
+        print ("here")
         // Do any additional setup after loading the view, typically from a nib.
         
         // User is already logged in, go to next view controller.

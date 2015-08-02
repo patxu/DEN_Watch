@@ -41,6 +41,7 @@
 		638273C41B6462610065DFAB /* CustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 638273C31B6462610065DFAB /* CustomObject.m */; };
 		638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CA1B646E5F0065DFAB /* AlertHelper.swift */; };
 		638273CF1B6472970065DFAB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CE1B6472970065DFAB /* LoginVC.swift */; };
+		6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385F0471B6D9C4B0054E6FE /* LocationManager.swift */; };
 		63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */; };
 		63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340C1B5C49A4008C23F3 /* ViewController.swift */; };
 		63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4340E1B5C49A4008C23F3 /* Main.storyboard */; };
@@ -56,7 +57,6 @@
 		63B434481B5C49A4008C23F3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434471B5C49A4008C23F3 /* ExtensionDelegate.swift */; };
 		63B4344A1B5C49A4008C23F3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434491B5C49A4008C23F3 /* NotificationController.swift */; };
 		63B4344C1B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B4344B1B5C49A4008C23F3 /* Assets.xcassets */; };
-		63CE81671B687B2700A98EEF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE81661B687B2700A98EEF /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +151,7 @@
 		638273C31B6462610065DFAB /* CustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomObject.m; sourceTree = "<group>"; };
 		638273CA1B646E5F0065DFAB /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		638273CE1B6472970065DFAB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		6385F0471B6D9C4B0054E6FE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B4340C1B5C49A4008C23F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +176,6 @@
 		63B434491B5C49A4008C23F3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		63B4344B1B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B4344D1B5C49A4008C23F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63CE81661B687B2700A98EEF /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +308,7 @@
 				638273CA1B646E5F0065DFAB /* AlertHelper.swift */,
 				638273CE1B6472970065DFAB /* LoginVC.swift */,
 				38938E201B68391200E85D2D /* UserListVC.swift */,
-				63CE81661B687B2700A98EEF /* LocationManager.swift */,
+				6385F0471B6D9C4B0054E6FE /* LocationManager.swift */,
 			);
 			path = DEN_watch;
 			sourceTree = "<group>";
@@ -566,7 +566,6 @@
 			files = (
 				63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */,
 				638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */,
-				63CE81671B687B2700A98EEF /* LocationManager.swift in Sources */,
 				384A60071B658D3E003B481D /* ProfileVC.swift in Sources */,
 				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
@@ -577,6 +576,7 @@
 				381A054E1B683D4900108BE1 /* PageVC.swift in Sources */,
 				38938E211B68391200E85D2D /* UserListVC.swift in Sources */,
 				38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */,
+				6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,7 +810,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DEN_watch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -829,7 +829,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DEN_watch/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";

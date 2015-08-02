@@ -2,16 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<true/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<key>Item0</key>
 				<string>fb876556445733090</string>
 			</array>
 		</dict>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<true/>
 	<key>FacebookDisplayName</key>
 	<string>The DEN Watch</string>
 	<key>FacebookAppID</key>
@@ -43,6 +46,8 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>location-services</string>
+		<string>gps</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
