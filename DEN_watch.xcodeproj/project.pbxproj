@@ -12,6 +12,9 @@
 		384A60071B658D3E003B481D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A60061B658D3E003B481D /* ProfileVC.swift */; };
 		386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386FC1AE1B6C703200E1739C /* ViewUserVC.swift */; };
 		38938E211B68391200E85D2D /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38938E201B68391200E85D2D /* UserListVC.swift */; };
+		3893A0471B72EBEE0016D813 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893A0441B72EBEE0016D813 /* Enum.swift */; };
+		3893A0481B72EBEE0016D813 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3893A0451B72EBEE0016D813 /* FontAwesome.otf */; };
+		3893A0491B72EBEE0016D813 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893A0461B72EBEE0016D813 /* FontAwesome.swift */; };
 		38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A76FA31B685B41009B54B1 /* DEN_Logo.png */; };
 		38A76FA61B686269009B54B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */; };
 		38C760C51B686D9C005DF586 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */; };
@@ -121,6 +124,9 @@
 		384A60061B658D3E003B481D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		386FC1AE1B6C703200E1739C /* ViewUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserVC.swift; sourceTree = "<group>"; };
 		38938E201B68391200E85D2D /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		3893A0441B72EBEE0016D813 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		3893A0451B72EBEE0016D813 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		3893A0461B72EBEE0016D813 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		38A76FA31B685B41009B54B1 /* DEN_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DEN_Logo.png; sourceTree = "<group>"; };
 		38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -291,6 +297,9 @@
 		63B434091B5C49A4008C23F3 /* DEN_watch */ = {
 			isa = PBXGroup;
 			children = (
+				3893A0441B72EBEE0016D813 /* Enum.swift */,
+				3893A0451B72EBEE0016D813 /* FontAwesome.otf */,
+				3893A0461B72EBEE0016D813 /* FontAwesome.swift */,
 				38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */,
 				38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */,
 				63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */,
@@ -520,6 +529,7 @@
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
 				38A76FA41B685B41009B54B1 /* DEN_Logo.png in Resources */,
 				38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */,
+				3893A0481B72EBEE0016D813 /* FontAwesome.otf in Resources */,
 				38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */,
 				38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */,
 				63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */,
@@ -568,11 +578,13 @@
 				638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */,
 				384A60071B658D3E003B481D /* ProfileVC.swift in Sources */,
 				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
+				3893A0471B72EBEE0016D813 /* Enum.swift in Sources */,
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
 				638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */,
 				386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */,
 				638273C41B6462610065DFAB /* CustomObject.m in Sources */,
 				38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */,
+				3893A0491B72EBEE0016D813 /* FontAwesome.swift in Sources */,
 				381A054E1B683D4900108BE1 /* PageVC.swift in Sources */,
 				38938E211B68391200E85D2D /* UserListVC.swift in Sources */,
 				38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */,

@@ -17,6 +17,8 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let textCellIdentifier = "TextCell"
     var userArray:NSMutableArray = []
     var manager: LocationManager?
+    let userSegue = "showUserDetails"
+    var index: Int! = 0
     
     override func viewDidLoad()
     {
@@ -30,7 +32,18 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
     }
     
+    //custom segue based on cell tapped
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == userSegue {
+            if let destination = segue.destinationViewController as? ViewUserVC {
+                if let index = userTable.indexPathForSelectedRow?.row {
+                    destination.user = userArray[index] as! PFUser
+                }
+            }
+        }
+    }
     
+    //Parse query
     func loadParseData(){
         let query = PFUser.query()!
         //query.whereKey("username", equalTo:"foo")
@@ -45,7 +58,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.userTable.reloadData()
             } else {
                 // Log details of the failure
-                print ("error")
+                print ("Parse data error: ", error)
             }
         }
     }
@@ -72,16 +85,12 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK:  UITableViewDelegate Methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        print(userArray[row])
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

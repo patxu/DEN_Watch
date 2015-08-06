@@ -11,9 +11,7 @@ import UIKit
 class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    var pageTitles: NSArray!
-    var pageImages: NSArray!
-    var index: Int!
+    var index: Int! = 0
     
     override func viewDidLoad()
     {
@@ -21,7 +19,6 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
         self.pageViewController.dataSource = self
         
-        index = 1
         let startVC = self.viewControllerAtIndex(index) as UIViewController
         let viewControllers = NSArray(object: startVC)
         
@@ -41,16 +38,14 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
-
         if (index == 0) {
-            var vc: UserListVC = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
+            let vc: UserListVC = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
             print("view controller at index -> " + vc.description)
-//            vc.pageIndex = index
             return vc
-        } else {
-            var vc: ProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
+        }
+        else {
+            let vc: ProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
             print("view controller at index -> " + vc.description)
-//            vc.pageIndex = index
             return vc
         }
     }
@@ -104,7 +99,6 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
         else if (index == 0) {
             index = 1
         }
-        print((index + 1)%2)
         return self.viewControllerAtIndex((index + 1)%2)
         
     }
@@ -116,7 +110,7 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return 0
+        return index
     }
     
 }

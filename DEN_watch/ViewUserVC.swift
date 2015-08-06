@@ -8,20 +8,39 @@
 
 import Foundation
 import UIKit
+import Parse
 //import FontAwesome_swift
 
 class ViewUserVC: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var button: UIButton!
+    
+    var index: Int! = 1
+    var user: PFUser!
+    
+    override func viewWillAppear(animated: Bool) {
+        if user == nil {
+            //catch error
+        }
+        else {
+            nameLabel.text = user["FullName"] as! String!
+            emailLabel.text = user.email as String!
+            descriptionLabel.text = "NO DESCRIPTION" //todo
+            button.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+            button.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
+
+            setPictureView()
+        }
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setPictureView()
     }
     
     func setPictureView(){
