@@ -42,6 +42,9 @@
 		638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CA1B646E5F0065DFAB /* AlertHelper.swift */; };
 		638273CF1B6472970065DFAB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CE1B6472970065DFAB /* LoginVC.swift */; };
 		6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385F0471B6D9C4B0054E6FE /* LocationManager.swift */; };
+		63A91CCD1B72E26E00AF6834 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63A91CCB1B72E26E00AF6834 /* GoogleSignIn.bundle */; };
+		63A91CCE1B72E26E00AF6834 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A91CCC1B72E26E00AF6834 /* GoogleSignIn.framework */; };
+		63A91CD01B72E28900AF6834 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A91CCF1B72E28900AF6834 /* AddressBook.framework */; };
 		63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */; };
 		63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340C1B5C49A4008C23F3 /* ViewController.swift */; };
 		63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4340E1B5C49A4008C23F3 /* Main.storyboard */; };
@@ -152,6 +155,9 @@
 		638273CA1B646E5F0065DFAB /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		638273CE1B6472970065DFAB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6385F0471B6D9C4B0054E6FE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		63A91CCB1B72E26E00AF6834 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		63A91CCC1B72E26E00AF6834 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		63A91CCF1B72E28900AF6834 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B4340C1B5C49A4008C23F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,10 +189,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A91CD01B72E28900AF6834 /* AddressBook.framework in Frameworks */,
 				638273C01B6460C10065DFAB /* libsqlite3.dylib in Frameworks */,
 				638273C11B6460C10065DFAB /* libz.1.dylib in Frameworks */,
 				638273B61B6460490065DFAB /* AudioToolbox.framework in Frameworks */,
 				638273B71B6460490065DFAB /* CFNetwork.framework in Frameworks */,
+				63A91CCE1B72E26E00AF6834 /* GoogleSignIn.framework in Frameworks */,
 				38C760C51B686D9C005DF586 /* FBSDKLoginKit.framework in Frameworks */,
 				638273B81B6460490065DFAB /* CoreGraphics.framework in Frameworks */,
 				638273B91B6460490065DFAB /* CoreLocation.framework in Frameworks */,
@@ -244,6 +252,9 @@
 		638273C91B64640C0065DFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63A91CCF1B72E28900AF6834 /* AddressBook.framework */,
+				63A91CCB1B72E26E00AF6834 /* GoogleSignIn.bundle */,
+				63A91CCC1B72E26E00AF6834 /* GoogleSignIn.framework */,
 				38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */,
 				38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */,
 				38F769F01B64759F0067D0E0 /* Bolts.framework */,
@@ -522,6 +533,7 @@
 				38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */,
 				38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */,
 				38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */,
+				63A91CCD1B72E26E00AF6834 /* GoogleSignIn.bundle in Resources */,
 				63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

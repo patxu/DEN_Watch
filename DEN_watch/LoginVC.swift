@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -79,11 +79,19 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // Uncomment to automatically sign in the user.
+        //GIDSignIn.sharedInstance().signInSilently()
+
+        
         // User is already logged in, go to next view controller.
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             print("already logged in")
             self.performSegueWithIdentifier("alreadyLoggedIn", sender: self)
         }
+        
+            
         else {
             for view in self.view.subviews {
                 if view.isKindOfClass(FBSDKLoginButton) {
@@ -129,6 +137,9 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             self.performSegueWithIdentifier("loginComplete", sender: self)
         }
     }
+    
+    //Google delegate methods
+    
     
     //call this method anytime after a user has logged in by calling self.returnUserData().
     func returnUserData()
