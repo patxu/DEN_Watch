@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -28,6 +28,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate, 
         PFUser.logInWithUsernameInBackground(emailField.text!, password:passwordField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
+                print("pinning in background")
+                user!.pinInBackground()
                 self.performSegueWithIdentifier("loginComplete", sender: self)
             } else {
                 var alert: UIViewController
@@ -78,8 +80,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
         
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
