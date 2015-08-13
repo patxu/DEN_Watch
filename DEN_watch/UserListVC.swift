@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Parse
+import CoreLocation
 
 class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,7 +20,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var manager: LocationManager?
     let userSegue = "showUserDetails"
     var index: Int! = 0
-    
+       
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -95,4 +96,6 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+   
 }

@@ -121,6 +121,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate, 
         
         if ((error) != nil)
         {
+            print (error)
             // Process error
         }
         else if result.isCancelled {
