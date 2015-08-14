@@ -19,6 +19,7 @@ class SignUpVC: UIViewController{
     
     let ParseYear = "Year"
     let ParseFullName = "FullName"
+    let inDEN = "inDEN"
     
     @IBAction func createAccount(sender: AnyObject) {
        
@@ -45,6 +46,7 @@ class SignUpVC: UIViewController{
         user.email = emailField.text
         user[ParseFullName] = nameField.text
         user[ParseYear] = yearField.text
+        user[inDEN] = false //set smartly? TODO
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in

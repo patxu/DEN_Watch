@@ -47,7 +47,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Parse query
     func loadParseData(){
         let query = PFUser.query()!
-        //query.whereKey("username", equalTo:"foo")
+        //query.whereKey("inDEN", equalTo:true)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil{

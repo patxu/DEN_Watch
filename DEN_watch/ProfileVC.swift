@@ -10,25 +10,70 @@ import Foundation
 import UIKit
 import Parse
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!    
+    @IBOutlet weak var editPicture: UIButton!
+    @IBOutlet weak var logout: UIButton!
     
     var user: PFUser!
-    
     var name: String!
     var email: String!
     
+    var imagePicker = UIImagePickerController()
+    
+    override func viewWillAppear(animated: Bool) {
+        //edit button
+        editPicture.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        editPicture.setTitle(String.fontAwesomeIconWithName(.Pencil), forState: .Normal)
+        
+        //log out button
+        logout.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        logout.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
+    }
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         getUser()
-
+        imagePicker.delegate = self
         
         setPictureView()
+    }
+    
+    //logout
+    @IBAction func logout(sender: AnyObject) {
+        self.performSegueWithIdentifier("logoutSegue", sender: self)
+    }
+    
+    //choose a picture from the gallery
+    @IBAction func editPicture(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            
+            self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to cheng "UIImagePickerControllerOriginalImage" below
+            self.imagePicker.sourceType = .SavedPhotosAlbum
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    //delegates
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo image: UIImage, info: [NSObject : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.pictureView.contentMode = .ScaleAspectFit
+            self.pictureView.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    //delegates
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func getUser() {
@@ -48,6 +93,9 @@ class ProfileVC: UIViewController {
 //                        self.descriptionLabel.text = "NO DESCRIPTION" //todo
                         
                     }
+                }
+                else {
+                    print("no locally stored user")
                 }
             } else {
                 // Log details of the failure
