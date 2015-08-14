@@ -159,8 +159,6 @@
 		638273CA1B646E5F0065DFAB /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		638273CE1B6472970065DFAB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6385F0471B6D9C4B0054E6FE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		63A91CCB1B72E26E00AF6834 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
-		63A91CCC1B72E26E00AF6834 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		63A91CCF1B72E28900AF6834 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,8 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				63A91CCF1B72E28900AF6834 /* AddressBook.framework */,
-				63A91CCB1B72E26E00AF6834 /* GoogleSignIn.bundle */,
-				63A91CCC1B72E26E00AF6834 /* GoogleSignIn.framework */,
 				38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */,
 				38A76FA51B686269009B54B1 /* FBSDKCoreKit.framework */,
 				38F769F01B64759F0067D0E0 /* Bolts.framework */,
