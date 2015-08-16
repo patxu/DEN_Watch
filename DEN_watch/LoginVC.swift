@@ -12,20 +12,17 @@ import Parse
 
 class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
-    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var usernameField: UITextField! //an email address
     @IBOutlet weak var passwordField: UITextField!
     
-    //button action
-    @IBAction func loginPressed(sender: AnyObject) { login() }
-    
-    //login wtih email and password
-    func login(){
-        if (emailField.text!.isEmpty || passwordField.text!.isEmpty){
+    //login wtih username and password
+    @IBAction func login(sender: AnyObject) {
+        if (usernameField.text!.isEmpty || passwordField.text!.isEmpty){
             let alert = AlertHelper.createAlert("Missing login information.")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        PFUser.logInWithUsernameInBackground(emailField.text!, password:passwordField.text!) {
+        PFUser.logInWithUsernameInBackground(usernameField.text!, password:passwordField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("pinning in background")
@@ -45,17 +42,16 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         }
     }
     
-    //text field delegate
+    //text field delegate- handle "return" presses
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder() //dismiss textfield
-        if (textField == emailField){
+        if (textField == usernameField){
             passwordField.becomeFirstResponder()
         }
         else if (textField == passwordField){
-            login()
+            login(textField)
         }
         return true;
-        
     }
     
     //return segue

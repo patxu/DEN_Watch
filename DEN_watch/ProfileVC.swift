@@ -23,7 +23,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     var name: String!
     var email: String!
     
-    var imagePicker = UIImagePickerController()
+    var imagePicker: UIImagePickerController = UIImagePickerController()
     
     override func viewWillAppear(animated: Bool) {
         //edit button
@@ -41,7 +41,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         getUser()
         imagePicker.delegate = self
         
-        setPictureView()
+        Utils.setPictureBorder(pictureView)
     }
     
     //logout
@@ -90,7 +90,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                         self.name = self.user["FullName"] as! String!
                         self.email = self.user.email as String!
                         self.setProfileFields()
-//                        self.descriptionLabel.text = "NO DESCRIPTION" //todo
                         
                     }
                 }
@@ -109,12 +108,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         self.nameLabel.text = name
     }
     
-    func setPictureView(){
-        pictureView.layer.cornerRadius = pictureView.bounds.height / 2
-        pictureView.layer.borderWidth = 3
-        pictureView.layer.borderColor = UIColor.redColor().CGColor
-        pictureView.layer.masksToBounds = true
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

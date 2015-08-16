@@ -40,7 +40,6 @@ class ViewUserVC: UIViewController {
             
             nameLabel.text = user["FullName"] as! String!
             emailLabel.text = user.email as String!
-            descriptionLabel.text = "NO DESCRIPTION" //todo
             
         }
         
@@ -49,19 +48,12 @@ class ViewUserVC: UIViewController {
         button.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
         
 
-        setPictureView()
+        Utils.setPictureBorder(pictureView)
     }
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-    
-    func setPictureView(){
-        pictureView.layer.cornerRadius = pictureView.bounds.height / 2
-        pictureView.layer.borderWidth = 3
-        pictureView.layer.borderColor = UIColor.redColor().CGColor
-        pictureView.layer.masksToBounds = true
     }
     
     override func didReceiveMemoryWarning() {

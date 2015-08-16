@@ -13,40 +13,52 @@ import Parse
 class SignUpVC: UIViewController{
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var yearField: UITextField!
+    @IBOutlet weak var emailField: UITextField! //username
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var verifyPasswordField: UITextField!
     
+    //Parse field constants
     let ParseYear = "Year"
     let ParseFullName = "FullName"
-    let inDEN = "inDEN"
+    let ParseInDEN = "inDEN"
     
     @IBAction func createAccount(sender: AnyObject) {
        
         //ensure required field are filled
-        if (nameField.text!.isEmpty || emailField.text!.isEmpty || passwordField.text!.isEmpty){
+        if (nameField.text!.isEmpty || emailField.text!.isEmpty || passwordField.text!.isEmpty || passwordField.text!.isEmpty){
             let alert = AlertHelper.createAlert("Please fill in each required field.")
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
+        
+        //ensure passwords match
+        if (passwordField.text! != verifyPasswordField.text!){
+            let alert = AlertHelper.createAlert("Passwords do not match.")
+            passwordField.text = ""
+            verifyPasswordField.text = ""
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
         let user = PFUser()
-        print(yearField.text)
         if (yearField.text!.isEmpty){ // no class year MAKE OBVIOUS THAT THIS IS NOT REQUIRED
             user[ParseYear] = 0
         } else { // check for valid year
             let year = Double(yearField.text!)
             if year == nil || (year <= 0 && year >= 100) {
                 let alert = AlertHelper.createAlert("Please make sure the class year follows the example (e.g. \"17\")")
+                yearField.text = ""
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
         }
-        user.username =  nameField.text! + emailField.text! //FIX USERNAMES
+        user.username =  emailField.text
         user.password = passwordField.text
         user.email = emailField.text
         user[ParseFullName] = nameField.text
         user[ParseYear] = yearField.text
-        user[inDEN] = false //set smartly? TODO
+        user[ParseInDEN] = false //set smartly? TODO
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -60,12 +72,34 @@ class SignUpVC: UIViewController{
                 default:
                     alert = AlertHelper.createAlert(error!.localizedDescription)
                 }
+                self.emailField.text = ""
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             } else { // continue to next VC
                 self.performSegueWithIdentifier("signUpComplete", sender: self)
             }
         }
+    }
+    
+    //text field delegate- handle "return" presses
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder() //dismiss textfield
+        if (textField == nameField){
+            yearField.becomeFirstResponder()
+        }
+        else if (textField == yearField){
+            emailField.becomeFirstResponder()
+        }
+        else if (textField == emailField){
+            passwordField.becomeFirstResponder()
+        }
+        else if (textField == passwordField){
+            verifyPasswordField.becomeFirstResponder()
+        }
+        else if (textField == verifyPasswordField){
+            createAccount(textField)
+        }
+        return true;
     }
     
     override func viewDidLoad() {
