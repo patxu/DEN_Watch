@@ -41,12 +41,12 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     {
         if (index == 0) {
             let vc: UserListVC = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
-            print("view controller at index -> " + vc.description)
+//            print("view controller at index -> " + vc.description)
             return vc
         }
         else {
             let vc: ProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
-            print("view controller at index -> " + vc.description)
+//            print("view controller at index -> " + vc.description)
             return vc
         }
     }
