@@ -20,6 +20,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var manager: LocationManager?
     let userSegue = "showUserDetails"
     var index: Int! = 0
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
        
     override func viewDidLoad()
     {
@@ -69,8 +70,11 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func refresh(refreshControl: UIRefreshControl) {
+        //Automatically reloads table inside this method
         loadParseData()
-        //self.userTable.reloadData()
+        //If user is refreshing list, good chance user is inside DEN, so do a one time location check to see if user is in DEN
+        //This should help with issue where region can take time to register exit/enter
+        appDelegate.locationManager.startUpdatingLocation()
         refreshControl.endRefreshing()
     }
     
