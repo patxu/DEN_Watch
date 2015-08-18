@@ -46,8 +46,12 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //Parse query
     func loadParseData(){
+        //Clears userArray
+        //Note: This is inefficient because users already in the list must be redownloaded
+        //However, with limited number of people this should be fine, but if things look slow, take a look at this
+        userArray = []
         let query = PFUser.query()!
-        //query.whereKey("inDEN", equalTo:true)
+        query.whereKey("inDEN", equalTo:true)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil{
@@ -65,7 +69,8 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        self.userTable.reloadData()
+        loadParseData()
+        //self.userTable.reloadData()
         refreshControl.endRefreshing()
     }
     
