@@ -38,15 +38,24 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        getUser()
+        setUserDetails()
         imagePicker.delegate = self
         
         Utils.setPictureBorder(pictureView)
     }
     
-    //logout
+    //logout dialog
     @IBAction func logout(sender: AnyObject) {
-        self.performSegueWithIdentifier("logoutSegue", sender: self)
+        var logoutConfirmation = UIAlertController(title: "Logout", message: "Are you really ready to leave?", preferredStyle: UIAlertControllerStyle.Alert)
+
+        logoutConfirmation.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        logoutConfirmation.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            self.performSegueWithIdentifier("logoutSegue", sender: self)
+        }))
+        
+        presentViewController(logoutConfirmation, animated: true, completion: nil)
     }
     
     //choose a picture from the gallery
@@ -76,7 +85,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func getUser() {
+    func setUserDetails() {
         let query = PFUser.query()!
         query.fromLocalDatastore()
         query.findObjectsInBackgroundWithBlock {
@@ -85,9 +94,13 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                 if let objects = objects as? [PFUser] {
                     for object in objects {
                         self.user = object
-                        print(self.user["FullName"])
+//                        print(self.user["FullName"])
 
                         self.name = self.user["FullName"] as! String!
+                        if self.user["Year"] as! String! != "" {
+//                            print("year is", self.user["Year"])
+                            self.name! += (self.user["Year"] as! String!)
+                        }
                         self.email = self.user.email as String!
                         self.setProfileFields()
                         
@@ -98,7 +111,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                 }
             } else {
                 // Log details of the failure
-                print ("Parse data error: ", error)
+                print("Parse data error: ", error)
                 self.user = nil
             }
         }
