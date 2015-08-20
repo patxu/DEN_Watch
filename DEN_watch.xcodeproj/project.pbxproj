@@ -147,6 +147,7 @@
 		38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowDownSmall@2x.png"; sourceTree = "<group>"; };
 		38F769F01B64759F0067D0E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		38F769F11B64759F0067D0E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		632269091B86463E0079B161 /* DEN_watch WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit App.entitlements"; sourceTree = "<group>"; };
 		638273A71B645DA80065DFAB /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		638273AE1B6460490065DFAB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		638273AF1B6460490065DFAB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -163,6 +164,7 @@
 		638273CA1B646E5F0065DFAB /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		638273CE1B6472970065DFAB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6385F0471B6D9C4B0054E6FE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		638DDA381B858F7D00688D0F /* DEN_watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DEN_watch.entitlements; sourceTree = "<group>"; };
 		63A91CCF1B72E28900AF6834 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		63B434491B5C49A4008C23F3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		63B4344B1B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B4344D1B5C49A4008C23F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63F0B7551B864116007E915E /* DEN_watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,7 @@
 		63B434091B5C49A4008C23F3 /* DEN_watch */ = {
 			isa = PBXGroup;
 			children = (
+				638DDA381B858F7D00688D0F /* DEN_watch.entitlements */,
 				638273CA1B646E5F0065DFAB /* AlertHelper.swift */,
 				63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */,
 				63B434111B5C49A4008C23F3 /* Assets.xcassets */,
@@ -353,6 +357,7 @@
 		63B434331B5C49A4008C23F3 /* DEN_watch WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				632269091B86463E0079B161 /* DEN_watch WatchKit App.entitlements */,
 				63B434341B5C49A4008C23F3 /* Interface.storyboard */,
 				63B434371B5C49A4008C23F3 /* Assets.xcassets */,
 				63B434391B5C49A4008C23F3 /* Info.plist */,
@@ -363,6 +368,7 @@
 		63B434421B5C49A4008C23F3 /* DEN_watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				63F0B7551B864116007E915E /* DEN_watch WatchKit Extension.entitlements */,
 				63B434451B5C49A4008C23F3 /* InterfaceController.swift */,
 				63B434471B5C49A4008C23F3 /* ExtensionDelegate.swift */,
 				63B434491B5C49A4008C23F3 /* NotificationController.swift */,
@@ -485,7 +491,11 @@
 				TargetAttributes = {
 					63B434061B5C49A4008C23F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = ZGX5GDM5U4;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -501,10 +511,21 @@
 					};
 					63B4342E1B5C49A4008C23F3 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = ZGX5GDM5U4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					63B4343D1B5C49A4008C23F3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = ZGX5GDM5U4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -773,9 +794,12 @@
 		63B434511B5C49A4008C23F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DEN_watch WatchKit Extension/DEN_watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "DEN_watch WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -790,9 +814,12 @@
 		63B434521B5C49A4008C23F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DEN_watch WatchKit Extension/DEN_watch WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "DEN_watch WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -808,11 +835,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DEN_watch WatchKit App/DEN_watch WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DEN_watch_WatchKit_Extension;
 				INFOPLIST_FILE = "DEN_watch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -824,11 +856,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DEN_watch WatchKit App/DEN_watch WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = DEN_watch_WatchKit_Extension;
 				INFOPLIST_FILE = "DEN_watch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -841,6 +878,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DEN_watch/DEN_watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",
@@ -851,6 +892,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DEN_watch/DEN_watch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -861,6 +903,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DEN_watch/DEN_watch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/**",
@@ -871,6 +917,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.dartmouth.den.DEN-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DEN_watch/DEN_watch-Bridging-Header.h";
 			};
 			name = Release;

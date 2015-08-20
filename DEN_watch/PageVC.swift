@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
@@ -33,6 +34,31 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 //        self.addChildViewController(self.pageViewController)
 //        self.view.addSubview(self.pageViewController.view)
 //        self.pageViewController.didMoveToParentViewController(self)
+        
+        // Watch kit data sharing stuff
+        var dictionary : [NSObject : AnyObject] = [
+            "a" : "1.0",
+            "b" : "2.0"
+        ]
+        print ("setting dictoonary")
+        let groupID = "group.edu.dartmouth.den.DEN-watch"
+        let sharedDefaults = NSUserDefaults(suiteName: groupID)
+        sharedDefaults?.setObject(dictionary, forKey: "userData")
+        
+        let appGroupID = "group.edu.dartmouth.den.DEN-watch"
+        
+        if let defaults = NSUserDefaults(suiteName: appGroupID) {
+            defaults.setValue("foo", forKey: "userString")
+        }
+        
+        if let defaults2 = NSUserDefaults(suiteName: appGroupID) {
+            if let data = defaults2.stringForKey("userString"){
+                print(data)
+            } else {
+                print("not set")
+            }
+        }
+        var isOk = sharedDefaults!.synchronize()
     }
     
     override func didReceiveMemoryWarning() {
