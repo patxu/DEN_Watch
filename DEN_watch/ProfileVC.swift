@@ -37,10 +37,18 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUserDetails()
         imagePicker.delegate = self
         
+        setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
         Utils.setPictureBorder(pictureView)
+    }
+    
+    func setUserNameAndEmails(user: PFUser, name: UILabel, email: UILabel) {
+        name.text = user["FullName"] as! String!
+        if user["Year"] as! String! != nil {
+            name.text! += " \'" + (user["Year"] as! String!)
+        }
+        email.text = user.email as String!
     }
     
     //logout confirmation and action
@@ -60,7 +68,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     //choose a picture from the gallery
     @IBAction func editPicture(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
             
             self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to change "UIImagePickerControllerOriginalImage" below
             self.imagePicker.sourceType = .SavedPhotosAlbum
@@ -84,26 +92,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    func setUserDetails() {
-        //                        print(self.user["FullName"])
-        
-        self.name = self.user["FullName"] as! String!
-        if self.user["Year"] as! String! != nil {
-            //                            print(self.user["Year"] as! String!)
-            self.name! += " \'" + (self.user["Year"] as! String!)
-        }
-        self.email = self.user.email as String!
-        //                        self.nameLabel.text = self.name
-        self.emailLabel.text = self.email
-        //                        self.setProfileFields()
-
-    }
-    
-    func setProfileFields(){
-        self.nameLabel.text = name
-    }
-    
 
     
     override func didReceiveMemoryWarning() {

@@ -19,12 +19,10 @@ class ViewUserVC: UIViewController {
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var button: UIButton!
     
-//    var index: Int! = 1
     var user: PFUser!
-
     
     override func viewWillAppear(animated: Bool) {
-        if user == nil { //check if there is a user passed to this view
+        if user == nil {
             print("no user passed to view")
         }
         else {
@@ -39,6 +37,9 @@ class ViewUserVC: UIViewController {
             }
             
             nameLabel.text = user["FullName"] as! String!
+            if user["Year"] as! String! != nil {
+                nameLabel.text! += " \'" + (user["Year"] as! String!)
+            }
             emailLabel.text = user.email as String!
             
         }
