@@ -80,23 +80,23 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
 
-        
+        //UNCOMMENT FOR FB LOGIN BUTTON
         // User is already logged in, go to next view controller.
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            print("already logged in")
-            self.performSegueWithIdentifier("alreadyLoggedIn", sender: self)
-        }
-        
-            
-        else {
-            for view in self.view.subviews {
-                if view.isKindOfClass(FBSDKLoginButton) {
-                    let loginView : FBSDKLoginButton = view as! FBSDKLoginButton
-                    loginView.readPermissions = ["public_profile", "email"]
-                    loginView.delegate = self
-                }
-            }
-        }
+//        if (FBSDKAccessToken.currentAccessToken() != nil) {
+//            print("already logged in")
+//            self.performSegueWithIdentifier("alreadyLoggedIn", sender: self)
+//        }
+//        
+//            
+//        else {
+//            for view in self.view.subviews {
+//                if view.isKindOfClass(FBSDKLoginButton) {
+//                    let loginView : FBSDKLoginButton = view as! FBSDKLoginButton
+//                    loginView.readPermissions = ["public_profile", "email"]
+//                    loginView.delegate = self
+//                }
+//            }
+//        }
         
         //custom segues
         let swipeGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showSecondViewController")

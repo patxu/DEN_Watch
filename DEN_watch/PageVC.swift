@@ -9,27 +9,30 @@
 import UIKit
 import CoreLocation
 
-class PageVC: UIViewController, UIPageViewControllerDataSource {
+class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var pageViewController: UIPageViewController!
-    var index: Int! = 0
+//    var pageViewController: UIPageViewController!
+    var index = 0
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
-        self.pageViewController.dataSource = self
+//        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
+//        self.pageViewController.dataSource = self
+        
+        self.dataSource = self
+        self.delegate = self
         
         let startVC = self.viewControllerAtIndex(index) as UIViewController
-        let viewControllers = NSArray(object: startVC)
+        let viewControllers: NSArray = [startVC]
         
-        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        print("Transition style is" , self.transitionStyle.rawValue)
+//        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
         
-        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 60)
-
-        self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+//        self.addChildViewController(self.pageViewController)
+//        self.view.addSubview(self.pageViewController.view)
+//        self.pageViewController.didMoveToParentViewController(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,15 +42,12 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
     
     func viewControllerAtIndex(index: Int) -> UIViewController
     {
+        print("index is ", index)
         if (index == 0) {
-            let vc: UserListVC = self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
-//            print("view controller at index -> " + vc.description)
-            return vc
+            return self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
         }
         else {
-            let vc: ProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
-//            print("view controller at index -> " + vc.description)
-            return vc
+            return self.storyboard?.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileVC!
         }
     }
     
@@ -61,21 +61,16 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
 //        var index = vc.pageIndex as Int
 //        
 //        
-//        if (index == 0 || index == NSNotFound)
-//        {
-//            return nil
-//            
-//        }
-        
-//        index--
-        if (index == 1) {
-            index = 0
+        if (self.index == 0)
+        {
+            return nil
+            
         }
-        else if (index == 0) {
-            index = 1
-        }
-        return self.viewControllerAtIndex((index + 1)%2)
         
+        self.index--
+
+        return self.viewControllerAtIndex(index)
+//        return self.viewControllerAtIndex((index + 1)%2)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
@@ -88,19 +83,15 @@ class PageVC: UIViewController, UIPageViewControllerDataSource {
 //            return nil
 //        }
         
-//        index++
-//        
-//        if (index == self.pageTitles.count)
-//        {
-//            return nil
-//        }
-        if (index == 1) {
-            index = 0
+        
+        if (self.index == 1)
+        {
+            return nil
         }
-        else if (index == 0) {
-            index = 1
-        }
-        return self.viewControllerAtIndex((index + 1)%2)
+        self.index++
+
+        return self.viewControllerAtIndex(index)
+//        return self.viewControllerAtIndex((index + 1)%2)
         
     }
     
