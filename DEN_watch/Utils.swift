@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 let borderColor = "#03A9F4"
 
@@ -19,4 +20,6 @@ class Utils{
         view.layer.borderColor = UIColor(rgba: borderColor).CGColor
         view.layer.masksToBounds = true
     }
+    
+
 }
