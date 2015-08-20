@@ -20,8 +20,6 @@ extension UIColor {
             let hex: String = rgba.substringFromIndex(index)
             let scanner = NSScanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
-            print(hex)
-            print(hex.characters.count)
             if scanner.scanHexLongLong(&hexValue) {
                 switch (hex.characters.count) {
                 case 3:

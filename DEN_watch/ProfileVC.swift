@@ -19,7 +19,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var editPicture: UIButton!
     @IBOutlet weak var logout: UIButton!
     
-    var user: PFUser!
+    var user: PFUser! = PFUser.currentUser()
     var name: String!
     var email: String!
     
@@ -35,8 +35,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         logout.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
     }
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setUserDetails()
         imagePicker.delegate = self
@@ -44,14 +43,15 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         Utils.setPictureBorder(pictureView)
     }
     
-    //logout dialog
+    //logout confirmation and action
     @IBAction func logout(sender: AnyObject) {
-        var logoutConfirmation = UIAlertController(title: "Logout", message: "Are you really ready to leave?", preferredStyle: UIAlertControllerStyle.Alert)
+        let logoutConfirmation = UIAlertController(title: "Logout", message: "Are you really ready to leave?", preferredStyle: UIAlertControllerStyle.Alert)
 
         logoutConfirmation.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
         }))
         
         logoutConfirmation.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            PFUser.logOut()
             self.performSegueWithIdentifier("logoutSegue", sender: self)
         }))
         
@@ -62,7 +62,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBAction func editPicture(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
             
-            self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to cheng "UIImagePickerControllerOriginalImage" below
+            self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to change "UIImagePickerControllerOriginalImage" below
             self.imagePicker.sourceType = .SavedPhotosAlbum
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -86,35 +86,18 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     }
     
     func setUserDetails() {
-        let query = PFUser.query()!
-        query.fromLocalDatastore()
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil{
-                if let objects = objects as? [PFUser] {
-                    for object in objects {
-                        self.user = object
-//                        print(self.user["FullName"])
-
-                        self.name = self.user["FullName"] as! String!
-                        if self.user["Year"] as! String! != "" {
-//                            print("year is", self.user["Year"])
-                            self.name! += (self.user["Year"] as! String!)
-                        }
-                        self.email = self.user.email as String!
-                        self.setProfileFields()
-                        
-                    }
-                }
-                else {
-                    print("no locally stored user")
-                }
-            } else {
-                // Log details of the failure
-                print("Parse data error: ", error)
-                self.user = nil
-            }
+        //                        print(self.user["FullName"])
+        
+        self.name = self.user["FullName"] as! String!
+        if self.user["Year"] as! String! != nil {
+            //                            print(self.user["Year"] as! String!)
+            self.name! += " \'" + (self.user["Year"] as! String!)
         }
+        self.email = self.user.email as String!
+        //                        self.nameLabel.text = self.name
+        self.emailLabel.text = self.email
+        //                        self.setProfileFields()
+
     }
     
     func setProfileFields(){

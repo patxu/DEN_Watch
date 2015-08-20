@@ -14,8 +14,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 //    var pageViewController: UIPageViewController!
     var index = 0
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 //        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController!
 //        self.pageViewController.dataSource = self
@@ -27,9 +26,10 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         let viewControllers: NSArray = [startVC]
         
         self.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
-        print("Transition style is" , self.transitionStyle.rawValue)
 //        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
         
+        self.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.size.height + 37)
+
 //        self.addChildViewController(self.pageViewController)
 //        self.view.addSubview(self.pageViewController.view)
 //        self.pageViewController.didMoveToParentViewController(self)
@@ -40,9 +40,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         // Dispose of any resources that can be recreated.
     }
     
-    func viewControllerAtIndex(index: Int) -> UIViewController
-    {
-        print("index is ", index)
+    func viewControllerAtIndex(index: Int) -> UIViewController {
         if (index == 0) {
             return self.storyboard?.instantiateViewControllerWithIdentifier("UserListVC") as! UserListVC!
         }
@@ -54,54 +52,31 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
-    {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
-//        var vc = viewController as! UIViewController
-//        var index = vc.pageIndex as Int
-//        
-//        
-        if (self.index == 0)
-        {
+        if (self.index == 0) {
             return nil
-            
         }
-        
-        self.index--
-
-        return self.viewControllerAtIndex(index)
-//        return self.viewControllerAtIndex((index + 1)%2)
+        else {
+            return self.viewControllerAtIndex(--self.index)
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-//        var vc = viewController as! UIViewController
-//        var index = vc.pageIndex as Int
-//        
-//        if (index == NSNotFound)
-//        {
-//            return nil
-//        }
-        
-        
-        if (self.index == 1)
-        {
+        if (self.index == 1) {
             return nil
         }
-        self.index++
-
-        return self.viewControllerAtIndex(index)
-//        return self.viewControllerAtIndex((index + 1)%2)
-        
+        else {
+            return self.viewControllerAtIndex(++self.index)
+        }
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
-    {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 2
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
-    {
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return index
     }
     

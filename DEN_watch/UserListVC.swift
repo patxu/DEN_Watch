@@ -63,7 +63,6 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
                 self.userTable.reloadData()
             } else {
-                // Log details of the failure
                 print ("Parse data error: ", error)
             }
         }
