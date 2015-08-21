@@ -14,6 +14,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var usernameField: UITextField! //an email address
     @IBOutlet weak var passwordField: UITextField!
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     //login wtih username and password
     @IBAction func login(sender: AnyObject) {
@@ -27,6 +28,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             if user != nil {
                 print("pinning in background")
                 user!.pinInBackground()
+                self.appDelegate.locationManager.startUpdatingLocation()
                 self.performSegueWithIdentifier("loginComplete", sender: self)
             } else {
                 var alert: UIViewController
