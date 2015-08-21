@@ -23,21 +23,20 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     var name: String!
     var email: String!
     
-    var imagePicker: UIImagePickerController = UIImagePickerController()
+    var imagePicker = UIImagePickerController()
     
     override func viewWillAppear(animated: Bool) {
         //edit button
-        editPicture.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        editPicture.setTitle(String.fontAwesomeIconWithName(.Pencil), forState: .Normal)
+        editPicture.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
+        editPicture.setTitle(String.fontAwesomeIconWithName(.Camera), forState: .Normal)
         
         //log out button
-        logout.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        logout.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
         logout.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
         
         setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
         Utils.setPictureBorder(pictureView)
@@ -71,28 +70,29 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     //choose a picture from the gallery
     @IBAction func editPicture(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
-            
+        print("edit picture tapped")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            self.imagePicker.delegate = self
             self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to change "UIImagePickerControllerOriginalImage" below
-            self.imagePicker.sourceType = .SavedPhotosAlbum
+            self.imagePicker.sourceType = .PhotoLibrary
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
     
     //delegates
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo image: UIImage, info: [NSObject : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.pictureView.contentMode = .ScaleAspectFit
-            self.pictureView.image = pickedImage
-        }
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
-    }
+//    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+//        print("picture received")
+//        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+//        pictureView.contentMode = .ScaleAspectFit //3
+//        pictureView.image = chosenImage //4
+//        dismissViewControllerAnimated(true, completion: nil) //5
+//    }
+    
     
     //delegates
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("cancelling")
         dismissViewControllerAnimated(true, completion: nil)
     }
 
