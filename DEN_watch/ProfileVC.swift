@@ -63,6 +63,9 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             self.performSegueWithIdentifier("logoutSegue", sender: self)
         }))
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.userInDEN(false)
+        
         presentViewController(logoutConfirmation, animated: true, completion: nil)
     }
     
