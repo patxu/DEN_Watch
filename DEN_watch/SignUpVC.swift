@@ -101,6 +101,14 @@ class SignUpVC: UIViewController{
         }
         return true;
     }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.nameField.endEditing(true)
+        self.yearField.endEditing(true)
+        self.emailField.endEditing(true)
+        self.passwordField.endEditing(true)
+        self.verifyPasswordField.endEditing(true)
+    }
     
     override func viewDidLoad() {
         //unwind segue

@@ -39,7 +39,15 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         super.viewDidLoad()
         
         self.user = PFUser.currentUser()
-
+        if self.user != nil{
+            let pictureObject = self.user["picture"] as! PFObject
+            print(pictureObject)
+            if user["picture"] as? PFObject != nil {
+                let picture = pictureObject["picture"] as! NSData
+                let image = UIImage(data: picture)
+                self.pictureView.image = image
+            }
+        }
         
         imagePicker.delegate = self
 
@@ -75,7 +83,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     //choose a picture from the gallery
     @IBAction func editPicture(sender: AnyObject) {
-        print("edit picture tapped")
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to change "UIImagePickerControllerOriginalImage" below
             self.imagePicker.sourceType = .PhotoLibrary
@@ -92,9 +99,16 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             
             self.user = PFUser.currentUser()
             if user != nil {
-                var picture = PFObject(className:"UserPicture")
-                picture["picture"] = PFFile(data: UIImagePNGRepresentation(pickedImage))
-                
+                let pictureObject = user["picture"] as! PFObject //delete
+                if user["picture"] as? PFObject != nil {
+                    user.removeObjectForKey("picture")
+                }
+                let file = PFFile(data: UIImageJPEGRepresentation(pickedImage, 0.5)!)
+                let picture = PFObject(className:"UserPicture")
+                picture["picture"] = file
+                self.user["picture"] = picture
+                self.user.saveInBackground()
+                picture.saveInBackground()
             }
         }
         

@@ -43,6 +43,7 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             }
         }
     }
+
     
     //text field delegate- handle "return" presses
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -54,6 +55,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             login(textField)
         }
         return true;
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.passwordField.endEditing(true)
+        self.usernameField.endEditing(true)
     }
     
     //return segue
