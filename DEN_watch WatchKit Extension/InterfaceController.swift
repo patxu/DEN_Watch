@@ -8,9 +8,9 @@
 
 import WatchKit
 import Foundation
-import CoreData
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var label: WKInterfaceLabel!
     
 
@@ -32,30 +32,14 @@ class InterfaceController: WKInterfaceController {
     
     //No parse data should be sent to watch extension, only string data in dictionary or something
     @IBAction func getUserData(){
-        let groupID = "group.edu.dartmouth.den.DEN-watch"
-        
-        /*
-        if let defaults = NSUserDefaults(suiteName: groupID) {
-            defaults.setValue("foo", forKey: "userString")
-        }
-        */
-       
-        let defaults = NSUserDefaults(suiteName: groupID)
-        print(defaults?.dictionaryRepresentation().keys.array)
-        /*
-        if let data0 = defaults!.dictionaryForKey("userData") {
-            label.setText("set")
-            print(data0)
-        } else {
-            label.setText("not set")
-            print("not set")
-        }*/
-        if let data = defaults!.stringForKey("userString"){
-            label.setText("set")
-            print(data)
-        } else {
-            label.setText("not set")
-            print("not set")
-        }
+        let session = WCSession.defaultSession()
+        print("Session is reachable: \(session.reachable)") // this is false
+        let msg = ["message": "derp derp derp"]
+        session.sendMessage(msg, replyHandler: { reply in
+            print("Got reply: \(reply)")
+        }, errorHandler: { error in
+            print("error: \(error)")
+        })
     }
+    
 }

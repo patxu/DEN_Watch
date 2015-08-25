@@ -61,7 +61,7 @@ class SignUpVC: UIViewController{
         user[ParseInDEN] = false //set smartly? TODO
         
         user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
+            (succeeded, error) -> Void in
             if (error != nil) { // handle errors
                 var alert: UIViewController
                 switch error!.code {
