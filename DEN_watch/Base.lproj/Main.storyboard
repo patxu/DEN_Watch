@@ -108,7 +108,6 @@
                         <outlet property="usernameField" destination="n6x-ws-JVI" id="nxw-RI-cIb"/>
                         <segue destination="qdV-pZ-7y2" kind="show" identifier="loginComplete" id="R0u-Ak-hAF"/>
                         <segue destination="TE4-lw-TEX" kind="custom" identifier="idFirstSegue" customClass="FirstCustomSegue" customModule="DEN_watch" id="jgK-fB-LbA"/>
-                        <segue destination="qdV-pZ-7y2" kind="show" identifier="alreadyLoggedIn" animates="NO" id="daQ-lJ-CSY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -551,7 +550,7 @@
         <image name="missing-picture.png" width="289" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ckH-fr-Qaa"/>
+        <segue reference="R0u-Ak-hAF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
 </document>

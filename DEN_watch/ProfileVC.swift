@@ -23,7 +23,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     var name: String!
     var email: String!
     
-    var imagePicker = UIImagePickerController()
+    let imagePicker = UIImagePickerController()
     
     override func viewWillAppear(animated: Bool) {
         //edit button
@@ -38,6 +38,11 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.user = PFUser.currentUser()
+
+        
+        imagePicker.delegate = self
+
         setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
         Utils.setPictureBorder(pictureView)
     }
@@ -65,14 +70,13 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.userInDEN(false)
         
-        presentViewController(logoutConfirmation, animated: true, completion: nil)
+        self.presentViewController(logoutConfirmation, animated: true, completion: nil)
     }
     
     //choose a picture from the gallery
     @IBAction func editPicture(sender: AnyObject) {
         print("edit picture tapped")
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            self.imagePicker.delegate = self
             self.imagePicker.allowsEditing = false //TODO allow for user edits; will have to change "UIImagePickerControllerOriginalImage" below
             self.imagePicker.sourceType = .PhotoLibrary
             
@@ -81,13 +85,21 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     }
     
     //delegates
-//    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-//        print("picture received")
-//        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
-//        pictureView.contentMode = .ScaleAspectFit //3
-//        pictureView.image = chosenImage //4
-//        dismissViewControllerAnimated(true, completion: nil) //5
-//    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.pictureView.contentMode = .ScaleAspectFill
+            self.pictureView.image = pickedImage
+            
+            self.user = PFUser.currentUser()
+            if user != nil {
+                var picture = PFObject(className:"UserPicture")
+                picture["picture"] = PFFile(data: UIImagePNGRepresentation(pickedImage))
+                
+            }
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     //delegates
