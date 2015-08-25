@@ -18,6 +18,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var pictureView: UIImageView!    
     @IBOutlet weak var editPicture: UIButton!
     @IBOutlet weak var logout: UIButton!
+    @IBOutlet weak var hourLabel: UILabel!
     
     var user: PFUser! = PFUser.currentUser()
     var name: String!
@@ -34,6 +35,8 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         logout.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
         logout.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +53,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                     }
                 })
             }
+            calculateWeekTime(self.user)
         }
         
         imagePicker.delegate = self
@@ -57,6 +61,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
         Utils.setPictureBorder(pictureView)
     }
+    
     
     func setUserNameAndEmails(user: PFUser, name: UILabel, email: UILabel) {
         name.text = user["FullName"] as! String!
@@ -130,5 +135,41 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func calculateWeekTime(user: PFUser) -> Int{
+        var query = PFQuery(className:"DenSession")
+        let calendar = NSCalendar.currentCalendar()
+        //week in seconds
+        let timeToSubtract = 7*24*60*60 as NSTimeInterval
+        let weekAgo = NSDate().dateByAddingTimeInterval(-timeToSubtract)
+        print ("WE ARE HERE")
+        print(weekAgo)
+        query.whereKey("user", equalTo:user)
+        query.whereKey("inTime", greaterThan:weekAgo)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject] {
+                    var minutes = 0.0
+                    for denSession in objects {
+                        let inDate = denSession["inTime"] as! NSDate
+                        if let outDate = denSession["outTime"] as? NSDate{
+                            minutes += (outDate.timeIntervalSinceDate(inDate)/60)
+                        }
+                    }
+                    self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!)")
+            }
+            
+        }
+        return 2
+    }
+
     
 }

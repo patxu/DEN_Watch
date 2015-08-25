@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -342,12 +342,33 @@
                                 <rect key="frame" x="122" y="28" width="130" height="130"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DEN Stats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp6-4t-ThE">
+                                <rect key="frame" x="139" y="377" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours This Week:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xua-nV-5hq">
+                                <rect key="frame" x="40" y="406" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-le-74o">
+                                <rect key="frame" x="183" y="406" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.54509803921568623" green="0.76470588235294112" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1ml-d8-8Mg" firstAttribute="leading" secondItem="ube-Yu-Bgz" secondAttribute="leading" id="4sc-Bq-PR8"/>
+                            <constraint firstItem="sp6-4t-ThE" firstAttribute="centerY" secondItem="8Ri-wW-EBp" secondAttribute="centerY" id="4vW-rT-IMk"/>
                             <constraint firstItem="ube-Yu-Bgz" firstAttribute="top" secondItem="1ml-d8-8Mg" secondAttribute="bottom" constant="16" id="Euc-Ot-6My"/>
+                            <constraint firstItem="sp6-4t-ThE" firstAttribute="centerX" secondItem="8Ri-wW-EBp" secondAttribute="centerX" id="F8x-gI-H6e"/>
                             <constraint firstItem="1ml-d8-8Mg" firstAttribute="leading" secondItem="zZw-Jt-dXv" secondAttribute="leading" id="GSx-wT-1dl"/>
+                            <constraint firstItem="sp6-4t-ThE" firstAttribute="centerX" secondItem="8Ri-wW-EBp" secondAttribute="centerX" id="H2y-ij-jSW"/>
                             <constraint firstItem="zZw-Jt-dXv" firstAttribute="top" secondItem="HhJ-No-cLm" secondAttribute="bottom" constant="8" symbolic="YES" id="Jv1-EQ-a8c"/>
                             <constraint firstItem="zZw-Jt-dXv" firstAttribute="leading" secondItem="8Ri-wW-EBp" secondAttribute="leadingMargin" constant="4" id="MdB-Lm-mT7"/>
                             <constraint firstItem="rPq-Vx-AIK" firstAttribute="top" secondItem="ube-Yu-Bgz" secondAttribute="bottom" constant="422" id="QeK-Bj-09g"/>
@@ -372,6 +393,7 @@
                     <connections>
                         <outlet property="editPicture" destination="MwC-wj-Oh5" id="nY5-L9-Xei"/>
                         <outlet property="emailLabel" destination="ube-Yu-Bgz" id="wyt-1u-mHy"/>
+                        <outlet property="hourLabel" destination="fLL-le-74o" id="I62-LS-goS"/>
                         <outlet property="logout" destination="zZw-Jt-dXv" id="C1g-vU-cAB"/>
                         <outlet property="nameLabel" destination="1ml-d8-8Mg" id="UA9-1M-fjJ"/>
                         <outlet property="pictureView" destination="e13-By-vAR" id="APN-xk-Edb"/>
