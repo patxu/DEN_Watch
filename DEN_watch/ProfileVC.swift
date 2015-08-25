@@ -107,6 +107,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                 let picture = PFObject(className:"UserPicture")
                 picture["picture"] = file
                 self.user["picture"] = picture
+                
                 self.user.saveInBackground()
                 picture.saveInBackground()
             }
