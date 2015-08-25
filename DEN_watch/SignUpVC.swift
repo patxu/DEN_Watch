@@ -22,6 +22,7 @@ class SignUpVC: UIViewController{
     let ParseYear = "Year"
     let ParseFullName = "FullName"
     let ParseInDEN = "inDEN"
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBAction func createAccount(sender: AnyObject) {
        
@@ -76,6 +77,8 @@ class SignUpVC: UIViewController{
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             } else { // continue to next VC
+                user.pinInBackground()
+                self.appDelegate.locationManager.startUpdatingLocation()
                 self.performSegueWithIdentifier("signUpComplete", sender: self)
             }
         }

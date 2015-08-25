@@ -40,12 +40,15 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         
         self.user = PFUser.currentUser()
         if self.user != nil{
-            let pictureObject = self.user["picture"] as! PFObject
-            print(pictureObject)
-            if user["picture"] as? PFObject != nil {
-                let picture = pictureObject["picture"] as! NSData
-                let image = UIImage(data: picture)
-                self.pictureView.image = image
+            print(user)
+            if let pictureObject = user["picture"] as? PFObject {
+                print(pictureObject)
+                pictureObject.fetchIfNeeded()
+                pictureObject["picture"]!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                    if let data = data where error == nil{
+                        self.pictureView.image = UIImage(data: data)
+                    }
+                })
             }
         }
         
@@ -99,7 +102,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             
             self.user = PFUser.currentUser()
             if user != nil {
-                let pictureObject = user["picture"] as! PFObject //delete
                 if user["picture"] as? PFObject != nil {
                     user.removeObjectForKey("picture")
                 }
