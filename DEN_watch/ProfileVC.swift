@@ -136,14 +136,12 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         // Dispose of any resources that can be recreated.
     }
     
-    func calculateWeekTime(user: PFUser) -> Int{
+    func calculateWeekTime(user: PFUser){
         var query = PFQuery(className:"DenSession")
         let calendar = NSCalendar.currentCalendar()
         //week in seconds
         let timeToSubtract = 7*24*60*60 as NSTimeInterval
         let weekAgo = NSDate().dateByAddingTimeInterval(-timeToSubtract)
-        print ("WE ARE HERE")
-        print(weekAgo)
         query.whereKey("user", equalTo:user)
         query.whereKey("inTime", greaterThan:weekAgo)
         query.findObjectsInBackgroundWithBlock {
@@ -160,6 +158,12 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                             minutes += (outDate.timeIntervalSinceDate(inDate)/60)
                         }
                     }
+                    if (self.user["currentSession"] != nil){
+                        let currentSession = self.user["currentSession"] as! PFObject
+                        let startTime = currentSession["inTime"] as! NSDate
+                        minutes += (NSDate().timeIntervalSinceDate(startTime)/60)
+                    }
+                    
                     self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
                 }
             } else {
@@ -168,8 +172,5 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             }
             
         }
-        return 2
     }
-
-    
 }
