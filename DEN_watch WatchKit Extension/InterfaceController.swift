@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var session : WCSession!
 
     @IBOutlet var hourLabel: WKInterfaceLabel!
+    @IBOutlet var userLabel: WKInterfaceLabel!
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
@@ -42,9 +43,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         let minutes = message["minutes"] as! NSNumber
+        let users = message["userCount"]!
         
         let hours = String(Double(round(100*(minutes.doubleValue/60))/100))
         hourLabel.setText("Hours in DEN: \(hours)")
+        
+        userLabel.setText("Users in DEN:\(users)")
     }
     
 }

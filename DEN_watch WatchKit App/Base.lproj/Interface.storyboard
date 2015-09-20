@@ -22,6 +22,7 @@
                     </items>
                     <connections>
                         <outlet property="hourLabel" destination="MbA-UB-LaK" id="rq6-Ki-oNa"/>
+                        <outlet property="userLabel" destination="GxN-G3-NTy" id="MAq-X7-rpn"/>
                     </connections>
                 </controller>
             </objects>
