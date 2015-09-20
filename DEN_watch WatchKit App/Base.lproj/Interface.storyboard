@@ -15,6 +15,10 @@
                         </label>
                         <label alignment="left" text="Hours in DEN:" id="MbA-UB-LaK"/>
                         <label alignment="left" text="Users in DEN:" id="GxN-G3-NTy"/>
+                        <label width="136" height="90" alignment="left" text="Do. Or do not. There is no try -Yoda" textAlignment="center" numberOfLines="4" minimumScaleFactor="0.69999999999999996" id="0bM-RN-Veu">
+                            <color key="textColor" red="0.068202199340000005" green="0.74167303799999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="italicSystem" pointSize="14"/>
+                        </label>
                     </items>
                 </controller>
             </objects>

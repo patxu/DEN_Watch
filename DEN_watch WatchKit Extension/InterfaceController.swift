@@ -26,6 +26,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             session.delegate = self
             session.activateSession()
         }
+        let msg = ["message": "foo foo foo"]
+        session.sendMessage(msg, replyHandler: { reply in
+            print("Got reply: \(reply)")
+            }, errorHandler: { error in
+                print("error: \(error)")
+        })
     }
 
     override func didDeactivate() {

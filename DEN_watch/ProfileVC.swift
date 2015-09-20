@@ -141,11 +141,18 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         // Dispose of any resources that can be recreated.
     }
     
+    func setTimeFields(minutes: Double){
+        self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
+    }
+    
     func updateTimeFields(user: PFUser){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let minutes = appDelegate.calculateWeekTime(user)
-        self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
+        var function: (Double)->() = setTimeFields
+        appDelegate.calculateWeekTime(user,function)
+        
 
     }
+    
+    
     
     }
