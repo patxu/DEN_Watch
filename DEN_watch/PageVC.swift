@@ -28,7 +28,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         let startVC = self.viewControllerAtIndex(index) as UIViewController
         let viewControllers: NSArray = [startVC]
         
-        self.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
+        self.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         
 //        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
         
