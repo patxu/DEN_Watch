@@ -11,18 +11,21 @@ import Foundation
 import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
-    @IBOutlet var label: WKInterfaceLabel!
-    
+    var session : WCSession!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        getUserData()
         // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
     }
 
     override func didDeactivate() {
@@ -30,16 +33,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    //No parse data should be sent to watch extension, only string data in dictionary or something
-    @IBAction func getUserData(){
-        let session = WCSession.defaultSession()
-        print("Session is reachable: \(session.reachable)") // this is false
-        let msg = ["message": "derp derp derp"]
-        session.sendMessage(msg, replyHandler: { reply in
-            print("Got reply: \(reply)")
-        }, errorHandler: { error in
-            print("error: \(error)")
-        })
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        print("Got message: \(message)")
     }
     
 }

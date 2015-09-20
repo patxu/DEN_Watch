@@ -73,7 +73,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         loadParseData()
         //If user is refreshing list, good chance user is inside DEN, so do a one time location check to see if user is in DEN
         //This should help with issue where region can take time to register exit/enter
-        appDelegate.locationManager.startUpdatingLocation()
+        //appDelegate.locationManager.startUpdatingLocation()
         refreshControl.endRefreshing()
     }
     
