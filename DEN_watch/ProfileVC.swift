@@ -17,7 +17,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!    
     @IBOutlet weak var editPicture: UIButton!
-    @IBOutlet weak var logout: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
     
     var user: PFUser! = PFUser.currentUser()
@@ -32,26 +32,30 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         editPicture.setTitle(String.fontAwesomeIconWithName(.Camera), forState: .Normal)
         
         //log out button
-        logout.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
-        logout.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
+        logoutButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
+        logoutButton.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.user = PFUser.currentUser()
         if self.user != nil{
-            print(user)
-            if let pictureObject = user["picture"] as? PFObject {
-                print(pictureObject)
-                pictureObject.fetchIfNeeded()
-                pictureObject["picture"]!.getDataInBackgroundWithBlock({ (data, error) -> Void in
-                    if let data = data where error == nil{
-                        self.pictureView.image = UIImage(data: data)
+            //load picture
+            if let pictureObject = self.user["picture"] as? PFObject {
+                pictureObject.fetchInBackgroundWithBlock{
+                    (post: PFObject?, error: NSError?) -> Void in
+                    if error == nil {
+                        pictureObject["picture"]!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                            if let data = data where error == nil{
+                                self.pictureView.image = UIImage(data: data)
+                            }
+                        })
                     }
-                })
+                    else {
+                        print(error)
+                    }
+                }
             }
             calculateWeekTime(self.user)
         }
@@ -62,7 +66,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         Utils.setPictureBorder(pictureView)
     }
     
-    
+    //takes in user and sets the text of two UILabels based on the user info
     func setUserNameAndEmails(user: PFUser, name: UILabel, email: UILabel) {
         name.text = user["FullName"] as! String!
         if user["Year"] as! String! != nil {
@@ -99,7 +103,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         }
     }
     
-    //delegates
+    //image picker delegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.pictureView.contentMode = .ScaleAspectFill
@@ -108,15 +112,16 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             self.user = PFUser.currentUser()
             if user != nil {
                 if user["picture"] as? PFObject != nil {
+                    user["picture"]?.deleteEventually()
                     user.removeObjectForKey("picture")
                 }
-                let file = PFFile(data: UIImageJPEGRepresentation(pickedImage, 0.5)!)
+                let file = PFFile(data: UIImageJPEGRepresentation(pickedImage, 0.5)!) //does this go OOM with large images?
                 let picture = PFObject(className:"UserPicture")
                 picture["picture"] = file
-                self.user["picture"] = picture
-                
-                self.user.saveInBackground()
                 picture.saveInBackground()
+
+                self.user["picture"] = picture
+                self.user.saveInBackground()
             }
         }
         
@@ -124,7 +129,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     }
     
     
-    //delegates
+    //image picker delegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         print("cancelling")
         dismissViewControllerAnimated(true, completion: nil)

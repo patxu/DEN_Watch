@@ -17,44 +17,57 @@ class ViewUserVC: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
     
     var user: PFUser!
     
     override func viewWillAppear(animated: Bool) {
-        if user == nil {
-            print("no user passed to view")
-        }
-        else {
-            if let userPicture = user["profilePicture"] as? PFFile {
-                userPicture.getDataInBackgroundWithBlock({
-                    (imageData: NSData?, error: NSError?) -> Void in
-                    if (error == nil) {
-                        let image = UIImage(data:imageData!)
-                        self.pictureView.image = image
+        if self.user != nil {
+            //load picture
+            if let pictureObject = self.user["picture"] as? PFObject {
+                pictureObject.fetchIfNeeded()
+                pictureObject["picture"]!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                    if let data = data where error == nil{
+                        self.pictureView.image = UIImage(data: data)
                     }
                 })
             }
-            
-            nameLabel.text = user["FullName"] as! String!
-            if user["Year"] as! String! != nil {
-                nameLabel.text! += " \'" + (user["Year"] as! String!)
-            }
-            emailLabel.text = user.email as String!
-            
+            setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
+        }
+        else {
+            print("no user supplied to view controller!")
         }
         
         //back button
-        button.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        button.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
+        backButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        backButton.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
         
-
+        //email button
+        emailButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        emailButton.setTitle(String.fontAwesomeIconWithName(.Send), forState: .Normal)
+        
         Utils.setPictureBorder(pictureView)
+    }
+    
+    //send mail
+    @IBAction func sendMail(sender: AnyObject) {
+        let url = NSURL(string: "mailto:" + emailLabel.text!)
+        UIApplication.sharedApplication().openURL(url!)
     }
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    }
+    
+    //takes in user and sets the text of two UILabels based on the user info
+    func setUserNameAndEmails(user: PFUser, name: UILabel, email: UILabel) {
+        name.text = user["FullName"] as! String!
+        if user["Year"] as! String! != nil {
+            name.text! += " \'" + (user["Year"] as! String!)
+        }
+        email.text = user.email as String!
     }
     
     override func didReceiveMemoryWarning() {
