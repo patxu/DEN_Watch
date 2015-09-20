@@ -12,9 +12,13 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var session : WCSession!
-
+    var quotes = ["\"A person who never made a mistake never tried anything new.\" -Albert Einstein","\"Do. Or do not. There is no try.\" -Yoda","\"The way to get started is to quit talking and begin doing.\" -Walt Disney","\"Fail often so you can succeed sooner.\" -Tom Kelley","\"Success is how high you bounce after you hit bottom.\" –General George Patton","\"Risk more than others think is safe. Dream more than others think is practical.\" -Howard Schultz"]
+    
     @IBOutlet var hourLabel: WKInterfaceLabel!
     @IBOutlet var userLabel: WKInterfaceLabel!
+    
+    @IBOutlet var quoteLabel: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
@@ -28,7 +32,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             session.delegate = self
             session.activateSession()
         }
-        let msg = ["message": "foo foo foo"]
+        quoteLabel.setText(quotes[Int(arc4random_uniform(UInt32(quotes.count)))])
+        let msg = ["message": "value"]
         session.sendMessage(msg, replyHandler: { reply in
             print("Got reply: \(reply)")
             }, errorHandler: { error in
