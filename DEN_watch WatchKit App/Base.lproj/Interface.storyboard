@@ -20,6 +20,9 @@
                             <fontDescription key="font" type="italicSystem" pointSize="14"/>
                         </label>
                     </items>
+                    <connections>
+                        <outlet property="hourLabel" destination="MbA-UB-LaK" id="rq6-Ki-oNa"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
