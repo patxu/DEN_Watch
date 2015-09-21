@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var session : WCSession!
-    var quotes = ["\"A person who never made a mistake never tried anything new.\" -Albert Einstein","\"Do. Or do not. There is no try.\" -Yoda","\"The way to get started is to quit talking and begin doing.\" -Walt Disney","\"Fail often so you can succeed sooner.\" -Tom Kelley","\"Success is how high you bounce after you hit bottom.\" –General George Patton","\"Risk more than others think is safe. Dream more than others think is practical.\" -Howard Schultz"]
+    var quotes = ["\"A person who never made a mistake never tried anything new.\"\n-Albert Einstein","\"Do. Or do not. There is no try.\"\n-Yoda","\"The way to get started is to quit talking and begin doing.\"\n-Walt Disney","\"Fail often so you can succeed sooner.\"\n-Tom Kelley","\"Success is how high you bounce after you hit bottom.\"\n–General George Patton","\"Risk more than others think is safe. Dream more than others think is practical.\"\n-Howard Schultz"]
     
     @IBOutlet var hourLabel: WKInterfaceLabel!
     @IBOutlet var userLabel: WKInterfaceLabel!
@@ -50,10 +50,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let minutes = message["minutes"] as! NSNumber
         let users = message["userCount"]!
         
-        let hours = String(Double(round(100*(minutes.doubleValue/60))/100))
-        hourLabel.setText("Hours in DEN: \(hours)")
+        let hours = String(Int(round(100*(minutes.doubleValue/60))/100))
+        hourLabel.setText("  Hours in DEN: \(hours)")
         
-        userLabel.setText("Users in DEN:\(users)")
+        userLabel.setText("  Users in DEN: \(users)")
     }
     
 }
