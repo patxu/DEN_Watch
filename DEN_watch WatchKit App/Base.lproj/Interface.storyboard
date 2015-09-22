@@ -13,13 +13,18 @@
                         <label alignment="left" id="DtI-5k-vAE">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
-                        <label alignment="left" text="Hours in DEN:" id="MbA-UB-LaK"/>
-                        <label alignment="left" text="Users in DEN:" id="GxN-G3-NTy"/>
+                        <label alignment="left" text="  Hours in DEN:" id="MbA-UB-LaK">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="  Users in DEN:" id="GxN-G3-NTy">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                         <label width="136" height="90" alignment="left" text="“Risk more than others think is safe. Dream more than others think is practical.” - Howard Schultz" textAlignment="center" numberOfLines="5" minimumScaleFactor="0.69999999999999996" id="0bM-RN-Veu">
-                            <color key="textColor" red="0.068202199340000005" green="0.74167303799999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="italicSystem" pointSize="12"/>
                         </label>
                     </items>
+                    <color key="backgroundColor" red="0.54509806632995605" green="0.76470589637756348" blue="0.29019609093666077" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="hourLabel" destination="MbA-UB-LaK" id="rq6-Ki-oNa"/>
                         <outlet property="quoteLabel" destination="0bM-RN-Veu" id="8hT-aJ-Mun"/>
