@@ -20,14 +20,6 @@
 		38C760C51B686D9C005DF586 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */; };
 		38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */; };
 		38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */; };
-		38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */; };
-		38C760CD1B687FCB005DF586 /* UIButtonBarArrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */; };
-		38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */; };
-		38C760D11B688038005DF586 /* UIButtonBarArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */; };
-		38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */; };
-		38C760D71B688090005DF586 /* UIButtonBarArrowUpSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */; };
-		38C760D81B688090005DF586 /* UIButtonBarArrowDownSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */; };
-		38C760D91B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */; };
 		38F769F21B64759F0067D0E0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F769F01B64759F0067D0E0 /* Bolts.framework */; };
 		38F769F31B64759F0067D0E0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F769F11B64759F0067D0E0 /* Parse.framework */; };
 		638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273A71B645DA80065DFAB /* SignUpVC.swift */; };
@@ -134,14 +126,6 @@
 		38C760C41B686D9C005DF586 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstCustomSegue.swift; path = ../FirstCustomSegue.swift; sourceTree = "<group>"; };
 		38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCustomSegueUnwind.swift; sourceTree = "<group>"; };
-		38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowDown.png; sourceTree = "<group>"; };
-		38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowUp.png; sourceTree = "<group>"; };
-		38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowUp@2x.png"; sourceTree = "<group>"; };
-		38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowDown@2x.png"; sourceTree = "<group>"; };
-		38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowUpSmall@2x.png"; sourceTree = "<group>"; };
-		38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowUpSmall.png; sourceTree = "<group>"; };
-		38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarArrowDownSmall.png; sourceTree = "<group>"; };
-		38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowDownSmall@2x.png"; sourceTree = "<group>"; };
 		38F769F01B64759F0067D0E0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		38F769F11B64759F0067D0E0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		632269091B86463E0079B161 /* DEN_watch WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit App.entitlements"; sourceTree = "<group>"; };
@@ -238,21 +222,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38A76FA21B685B2A009B54B1 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				38C760D21B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png */,
-				38C760D31B688090005DF586 /* UIButtonBarArrowUpSmall.png */,
-				38C760D41B688090005DF586 /* UIButtonBarArrowDownSmall.png */,
-				38C760D51B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png */,
-				38C760CE1B688038005DF586 /* UIButtonBarArrowUp@2x.png */,
-				38C760CF1B688038005DF586 /* UIButtonBarArrowDown@2x.png */,
-				38C760CC1B687FCB005DF586 /* UIButtonBarArrowUp.png */,
-				38C760CA1B687FAE005DF586 /* UIButtonBarArrowDown.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		638273C91B64640C0065DFAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,7 +247,6 @@
 		63B433FE1B5C49A4008C23F3 = {
 			isa = PBXGroup;
 			children = (
-				38A76FA21B685B2A009B54B1 /* Images */,
 				638273C91B64640C0065DFAB /* Frameworks */,
 				63B434091B5C49A4008C23F3 /* DEN_watch */,
 				63B4341E1B5C49A4008C23F3 /* DEN_watchTests */,
@@ -553,18 +521,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C760D71B688090005DF586 /* UIButtonBarArrowUpSmall.png in Resources */,
-				38C760D81B688090005DF586 /* UIButtonBarArrowDownSmall.png in Resources */,
-				38C760CD1B687FCB005DF586 /* UIButtonBarArrowUp.png in Resources */,
 				63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */,
-				38C760D91B688090005DF586 /* UIButtonBarArrowDownSmall@2x.png in Resources */,
 				89E891261BE2E64F00C4F372 /* Profile.storyboard in Resources */,
-				38C760D11B688038005DF586 /* UIButtonBarArrowDown@2x.png in Resources */,
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
-				38C760D01B688038005DF586 /* UIButtonBarArrowUp@2x.png in Resources */,
 				3893A0481B72EBEE0016D813 /* FontAwesome.otf in Resources */,
-				38C760CB1B687FAE005DF586 /* UIButtonBarArrowDown.png in Resources */,
-				38C760D61B688090005DF586 /* UIButtonBarArrowUpSmall@2x.png in Resources */,
 				63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

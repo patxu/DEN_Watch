@@ -34,7 +34,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UIButtonBarArrowDown.png" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-pm-1Xl">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UIButtonBarArrowDown" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-pm-1Xl">
                                 <rect key="frame" x="177" y="591" width="20" height="11"/>
                                 <animations/>
                             </imageView>
@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UIButtonBarArrowUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-8B-S2b">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="UIButtonBarArrowUp" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-8B-S2b">
                                 <rect key="frame" x="177" y="28" width="20" height="11"/>
                                 <animations/>
                                 <constraints>
@@ -413,11 +413,11 @@
     </scenes>
     <resources>
         <image name="DEN_Logo" width="600" height="218"/>
-        <image name="UIButtonBarArrowDown.png" width="20" height="11"/>
-        <image name="UIButtonBarArrowUp.png" width="20" height="11"/>
+        <image name="UIButtonBarArrowDown" width="20" height="11"/>
+        <image name="UIButtonBarArrowUp" width="20" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R0u-Ak-hAF"/>
+        <segue reference="gVX-l5-HaI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
 </document>
