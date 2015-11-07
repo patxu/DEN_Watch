@@ -19,6 +19,7 @@ class ViewUserVC: UIViewController {
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var hourLabel: UILabel!
     
     var user: PFUser!
     
@@ -48,6 +49,16 @@ class ViewUserVC: UIViewController {
         emailButton.setTitle(String.fontAwesomeIconWithName(.Send), forState: .Normal)
         
         Utils.setPictureBorder(pictureView)
+    }
+    
+    func setTimeFields(minutes: Double){
+        self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
+    }
+    
+    func updateTimeFields(user: PFUser){
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var function: (Double)->() = setTimeFields
+        appDelegate.calculateWeekTime(user,function)
     }
     
     //send mail

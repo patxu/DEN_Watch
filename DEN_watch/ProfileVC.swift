@@ -19,6 +19,8 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var editPicture: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var aboutMeLabel: UILabel!
+    @IBOutlet weak var aboutMeButton: UIButton!
     
     var user: PFUser! = PFUser.currentUser()
     var name: String!
@@ -34,6 +36,10 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         //log out button
         logoutButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
         logoutButton.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
+        
+        aboutMeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
+        aboutMeButton.setTitle(String.fontAwesomeIconWithName(.Edit), forState: .Normal)
+        
     }
 
     override func viewDidLoad() {
@@ -59,6 +65,10 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             }
             updateTimeFields(self.user)
         }
+        
+        aboutMeLabel.layer.cornerRadius = 10
+        aboutMeLabel.layer.masksToBounds = true
+        aboutMeLabel.sizeToFit()
         
         imagePicker.delegate = self
 
@@ -149,8 +159,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var function: (Double)->() = setTimeFields
         appDelegate.calculateWeekTime(user,function)
-        
-
     }
     
     

@@ -16,7 +16,6 @@ class SignUpVC: UIViewController{
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var emailField: UITextField! //username
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var verifyPasswordField: UITextField!
     
     //Parse field constants
     let ParseYear = "Year"
@@ -34,13 +33,13 @@ class SignUpVC: UIViewController{
         }
         
         //ensure passwords match
-        if (passwordField.text! != verifyPasswordField.text!){
-            let alert = AlertHelper.createAlert("Passwords do not match.")
-            passwordField.text = ""
-            verifyPasswordField.text = ""
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
+//        if (passwordField.text! != verifyPasswordField.text!){
+//            let alert = AlertHelper.createAlert("Passwords do not match.")
+//            passwordField.text = ""
+//            verifyPasswordField.text = ""
+//            self.presentViewController(alert, animated: true, completion: nil)
+//            return
+//        }
         
         let user = PFUser()
         if (yearField.text!.isEmpty){ // no class year MAKE OBVIOUS THAT THIS IS NOT REQUIRED
@@ -97,11 +96,12 @@ class SignUpVC: UIViewController{
             passwordField.becomeFirstResponder()
         }
         else if (textField == passwordField){
-            verifyPasswordField.becomeFirstResponder()
-        }
-        else if (textField == verifyPasswordField){
             createAccount(textField)
+//            verifyPasswordField.becomeFirstResponder()
         }
+//        else if (textField == verifyPasswordField){
+//            createAccount(textField)
+//        }
         return true;
     }
 
@@ -110,7 +110,7 @@ class SignUpVC: UIViewController{
         self.yearField.endEditing(true)
         self.emailField.endEditing(true)
         self.passwordField.endEditing(true)
-        self.verifyPasswordField.endEditing(true)
+//        self.verifyPasswordField.endEditing(true)
     }
     
     override func viewDidLoad() {
