@@ -19,8 +19,8 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var editPicture: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var aboutMeLabel: UILabel!
     @IBOutlet weak var aboutMeButton: UIButton!
+    @IBOutlet weak var aboutMeTextView: UITextView!
     
     var user: PFUser! = PFUser.currentUser()
     var name: String!
@@ -59,6 +59,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
                         })
                     }
                     else {
+                        print("Error here")
                         print(error)
                     }
                 }
@@ -66,10 +67,9 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             updateTimeFields(self.user)
         }
         
-        aboutMeLabel.layer.cornerRadius = 10
-        aboutMeLabel.layer.masksToBounds = true
-        aboutMeLabel.sizeToFit()
         
+        
+        aboutMeTextView.text = self.user["aboutMe"] as! String
         imagePicker.delegate = self
 
         setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
@@ -154,7 +154,29 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     func setTimeFields(minutes: Double){
         self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
     }
+    @IBAction func EditAboutMe(sender: AnyObject) {
+        
+    }
     
+    
+    @IBAction func switchChanged(sender: UISwitch) {
+       if sender.on{
+        aboutMeTextView.editable = false
+        aboutMeTextView.backgroundColor = UIColor.clearColor()
+       
+        let aboutText = aboutMeTextView.text
+        self.user = PFUser.currentUser()
+        self.user["aboutMe"] = aboutText
+        self.user.saveInBackground()
+        
+        
+       }
+       else{
+        aboutMeTextView.editable = true
+        aboutMeTextView.backgroundColor = UIColor.whiteColor()
+        
+        }
+    }
     func updateTimeFields(user: PFUser){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var function: (Double)->() = setTimeFields
