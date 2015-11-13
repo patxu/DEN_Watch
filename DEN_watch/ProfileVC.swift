@@ -68,8 +68,13 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         }
         
         
+        if(self.user["aboutMe"] != nil){
+            aboutMeTextView.text = self.user["aboutMe"] as! String
+        }
+        else{
+            aboutMeTextView.text = "About Me"
+        }
         
-        aboutMeTextView.text = self.user["aboutMe"] as! String
         imagePicker.delegate = self
 
         setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
