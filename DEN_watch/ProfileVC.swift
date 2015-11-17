@@ -14,12 +14,10 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!    
     @IBOutlet weak var editPicture: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
-    @IBOutlet weak var aboutMeButton: UIButton!
     @IBOutlet weak var aboutMeTextView: UITextView!
     
     var user: PFUser! = PFUser.currentUser()
@@ -36,9 +34,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         //log out button
         logoutButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
         logoutButton.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
-        
-        aboutMeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
-        aboutMeButton.setTitle(String.fontAwesomeIconWithName(.Edit), forState: .Normal)
         
     }
 
@@ -67,7 +62,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             updateTimeFields(self.user)
         }
         
-        
+        //set about me
         if(self.user["aboutMe"] != nil){
             aboutMeTextView.text = self.user["aboutMe"] as! String
         }
@@ -146,7 +141,6 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     
     //image picker delegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        print("cancelling")
         dismissViewControllerAnimated(true, completion: nil)
     }
 

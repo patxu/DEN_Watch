@@ -15,11 +15,11 @@ class ViewUserVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pictureView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var aboutMeTextView: UITextView!
     
     var user: PFUser!
     
@@ -49,6 +49,15 @@ class ViewUserVC: UIViewController {
         emailButton.setTitle(String.fontAwesomeIconWithName(.Send), forState: .Normal)
         
         Utils.setPictureBorder(pictureView)
+        
+        //set about me
+        if(self.user["aboutMe"] != nil){
+            aboutMeTextView.text = self.user["aboutMe"] as! String
+        }
+        else{
+            aboutMeTextView.text = "About Me"
+        }
+        
     }
     
     func setTimeFields(minutes: Double){
