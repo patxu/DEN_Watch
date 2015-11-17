@@ -67,7 +67,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             aboutMeTextView.text = self.user["aboutMe"] as! String
         }
         else{
-            aboutMeTextView.text = "About Me"
+            aboutMeTextView.text = "Hi there!"
         }
         
         imagePicker.delegate = self
