@@ -66,7 +66,7 @@ class ViewUserVC: UIViewController {
     
     func updateTimeFields(user: PFUser){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var function: (Double)->() = setTimeFields
+        let function: (Double)->() = setTimeFields
         appDelegate.calculateWeekTime(user,function)
     }
     

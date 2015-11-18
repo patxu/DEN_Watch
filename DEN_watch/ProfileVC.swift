@@ -67,7 +67,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
             aboutMeTextView.text = self.user["aboutMe"] as! String
         }
         else{
-            aboutMeTextView.text = "Hi there!"
+            aboutMeTextView.text = "Hi, I'm " + (self.user["FullName"] as! String!) + "!"
         }
         
         imagePicker.delegate = self
@@ -178,7 +178,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     }
     func updateTimeFields(user: PFUser){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var function: (Double)->() = setTimeFields
+        let function: (Double)->() = setTimeFields
         appDelegate.calculateWeekTime(user,function)
     }
     
