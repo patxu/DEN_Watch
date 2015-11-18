@@ -231,7 +231,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate{
     internal func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             var hasAuthorised = false
-            var verboseKey = status
+            let verboseKey = status
             switch status {
             case CLAuthorizationStatus.Restricted:
                 locationStatus = NSLocalizedString("Restricted Access", comment: "")
