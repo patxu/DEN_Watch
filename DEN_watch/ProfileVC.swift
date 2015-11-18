@@ -19,6 +19,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var aboutMeTextView: UITextView!
+    @IBOutlet weak var editAboutMeButton: UIButton!
     
     var user: PFUser! = PFUser.currentUser()
     var name: String!
@@ -34,6 +35,9 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
         //log out button
         logoutButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
         logoutButton.setTitle(String.fontAwesomeIconWithName(.SignOut), forState: .Normal)
+        
+        editAboutMeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(25)
+        editAboutMeButton.setTitle(String.fontAwesomeIconWithName(.Pencil), forState: .Normal)
         
     }
 
@@ -89,16 +93,16 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     @IBAction func logout(sender: AnyObject) {
         let logoutConfirmation = UIAlertController(title: "Logout", message: "Are you really ready to leave?", preferredStyle: UIAlertControllerStyle.Alert)
 
-        logoutConfirmation.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-        }))
+        logoutConfirmation.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
         
         logoutConfirmation.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
             PFUser.logOut()
             self.performSegueWithIdentifier("logoutSegue", sender: self)
-        }))
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.userInDEN(false)
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.userInDEN(false)
+            
+        }))
         
         self.presentViewController(logoutConfirmation, animated: true, completion: nil)
     }
@@ -153,28 +157,22 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePicker
     func setTimeFields(minutes: Double){
         self.hourLabel.text = String(Double(round(100*(minutes/60))/100))
     }
-    @IBAction func EditAboutMe(sender: AnyObject) {
-        
-    }
     
-    
-    @IBAction func switchChanged(sender: UISwitch) {
-       if sender.on{
-        aboutMeTextView.editable = false
-        aboutMeTextView.backgroundColor = UIColor.clearColor()
-       
-        let aboutText = aboutMeTextView.text
-        self.user = PFUser.currentUser()
-        self.user["aboutMe"] = aboutText
-        self.user.saveInBackground()
-        
-        
-       }
-       else{
-        aboutMeTextView.editable = true
-        aboutMeTextView.backgroundColor = UIColor.whiteColor()
-        
-        }
+    @IBAction func editAboutMe(sender: AnyObject) {
+        let editPopup = UIAlertController(title: "Edit About Me", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        editPopup.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.text = self.aboutMeTextView.text
+        })
+        editPopup.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+        editPopup.addAction(UIAlertAction(title: "Done", style: .Default, handler: { (action: UIAlertAction!) in
+            let input = editPopup.textFields![0].text
+            self.aboutMeTextView.text = input
+            
+            self.user = PFUser.currentUser()
+            self.user["aboutMe"] = input
+            self.user.saveInBackground()
+        }))
+        presentViewController(editPopup, animated: true, completion: nil)
     }
     func updateTimeFields(user: PFUser){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

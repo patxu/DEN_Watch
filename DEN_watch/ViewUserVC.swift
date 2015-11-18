@@ -72,8 +72,14 @@ class ViewUserVC: UIViewController {
     
     //send mail
     @IBAction func sendMail(sender: AnyObject) {
-        let url = NSURL(string: "mailto:" + emailLabel.text!)
-        UIApplication.sharedApplication().openURL(url!)
+        if self.user != nil {
+            let url = NSURL(string: "mailto:" + emailLabel.text!)
+            UIApplication.sharedApplication().openURL(url!)
+        } else {
+            let alert = AlertHelper.createAlert("No user supplied.")
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
     }
 
     override func viewDidLoad()
