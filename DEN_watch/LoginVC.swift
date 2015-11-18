@@ -23,7 +23,9 @@ class LoginVC: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
-        PFUser.logInWithUsernameInBackground(usernameField.text!, password:passwordField.text!) {
+        //trims whitespace from end of email
+        let username = usernameField.text!.characters.split(isSeparator: {$0 == " "}).map(String.init)[0]
+        PFUser.logInWithUsernameInBackground(username, password:passwordField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("pinning in background")
