@@ -15,13 +15,15 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var userTable: UITableView!
+    @IBOutlet weak var pictureView: UIImageView!
+    
     let textCellIdentifier = "TextCell"
     var userArray:NSMutableArray = []
     var manager: LocationManager?
-    let userSegue = "showUserDetails"
     var index: Int! = 0
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-       
+    var user: PFUser! = PFUser.currentUser()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -31,18 +33,32 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         userTable.addSubview(refreshControl)
         userTable.delegate = self
         userTable.dataSource = self
-                
-    }
-    
-    //custom segue based on cell tapped
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == userSegue {
-            if let destination = segue.destinationViewController as? ViewUserVC {
-                if let index = userTable.indexPathForSelectedRow?.row {
-                    destination.user = userArray[index] as! PFUser
+        
+        self.user = PFUser.currentUser()
+        if self.user != nil{
+            //load picture
+            if let pictureObject = self.user["picture"] as? PFObject {
+                pictureObject.fetchInBackgroundWithBlock{
+                    (post: PFObject?, error: NSError?) -> Void in
+                    if error == nil {
+                        pictureObject["picture"]!.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                            if let data = data where error == nil{
+                                self.pictureView.image = UIImage(data: data)
+                            }
+                        })
+                    }
+                    else {
+                        print("Error while loading profile picture: ", error)
+                    }
                 }
             }
         }
+        
+        Utils.setPictureBorder(pictureView, width: 2)
+        let tap = UITapGestureRecognizer(target: self, action: Selector("viewProfile:"))
+        pictureView.userInteractionEnabled = true
+        pictureView.addGestureRecognizer(tap)
+        
     }
     
     //Parse query
@@ -93,7 +109,30 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK:  UITableViewDelegate Methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        performSegueWithIdentifier("viewUserSegue", sender: cell)
+    }
+    
+    func viewProfile(recognizer: UITapGestureRecognizer){
+        performSegueWithIdentifier("viewProfileSegue", sender: self)
+    }
+    
+    //custom segue based on cell tapped
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewUserSegue"{
+            if let destination = segue.destinationViewController as? ViewUserVC {
+                if let index = userTable.indexPathForSelectedRow?.row {
+                    destination.user = userArray[index] as! PFUser
+                }
+            }
+        }
+        if segue.identifier == "viewProfileSegue"{
+            if let destination = segue.destinationViewController as? ViewUserVC {
+                destination.user = self.user
+                destination.ownProfile = true
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

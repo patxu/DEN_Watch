@@ -14,9 +14,9 @@ let borderColor = "#03A9F4"
 
 class Utils{
     
-    class func setPictureBorder(view: UIImageView){
+    class func setPictureBorder(view: UIImageView, width: CGFloat){
         //rounded profile picture
-        view.layer.borderWidth = 5
+        view.layer.borderWidth = width
         view.layer.masksToBounds = false
         view.layer.borderColor = UIColor.whiteColor().CGColor
         view.layer.cornerRadius = view.frame.height/2

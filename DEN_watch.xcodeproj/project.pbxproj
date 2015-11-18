@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		381A054E1B683D4900108BE1 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A054D1B683D4900108BE1 /* PageVC.swift */; };
-		384A60071B658D3E003B481D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A60061B658D3E003B481D /* ProfileVC.swift */; };
 		386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386FC1AE1B6C703200E1739C /* ViewUserVC.swift */; };
 		38938E211B68391200E85D2D /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38938E201B68391200E85D2D /* UserListVC.swift */; };
 		3893A0471B72EBEE0016D813 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893A0441B72EBEE0016D813 /* Enum.swift */; };
@@ -39,7 +37,6 @@
 		6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385F0471B6D9C4B0054E6FE /* LocationManager.swift */; };
 		63A91CD01B72E28900AF6834 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A91CCF1B72E28900AF6834 /* AddressBook.framework */; };
 		63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */; };
-		63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340C1B5C49A4008C23F3 /* ViewController.swift */; };
 		63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4340E1B5C49A4008C23F3 /* Main.storyboard */; };
 		63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B434111B5C49A4008C23F3 /* Assets.xcassets */; };
 		63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B434131B5C49A4008C23F3 /* LaunchScreen.storyboard */; };
@@ -53,7 +50,6 @@
 		63B434481B5C49A4008C23F3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434471B5C49A4008C23F3 /* ExtensionDelegate.swift */; };
 		63B4344A1B5C49A4008C23F3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434491B5C49A4008C23F3 /* NotificationController.swift */; };
 		63B4344C1B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B4344B1B5C49A4008C23F3 /* Assets.xcassets */; };
-		89E891261BE2E64F00C4F372 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E891251BE2E64F00C4F372 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +109,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		381A054D1B683D4900108BE1 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
-		384A60061B658D3E003B481D /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		386FC1AE1B6C703200E1739C /* ViewUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserVC.swift; sourceTree = "<group>"; };
 		38938E201B68391200E85D2D /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		3893A0441B72EBEE0016D813 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -149,7 +143,6 @@
 		63A91CCF1B72E28900AF6834 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63B4340C1B5C49A4008C23F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63B4340F1B5C49A4008C23F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63B434111B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B434141B5C49A4008C23F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -172,7 +165,6 @@
 		63B4344B1B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B4344D1B5C49A4008C23F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F0B7551B864116007E915E /* DEN_watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		89E891251BE2E64F00C4F372 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,18 +277,14 @@
 				3893A0461B72EBEE0016D813 /* FontAwesome.swift */,
 				6385F0471B6D9C4B0054E6FE /* LocationManager.swift */,
 				638273CE1B6472970065DFAB /* LoginVC.swift */,
-				381A054D1B683D4900108BE1 /* PageVC.swift */,
-				384A60061B658D3E003B481D /* ProfileVC.swift */,
 				638273A71B645DA80065DFAB /* SignUpVC.swift */,
 				38C0DFA51B801D33006070DE /* UIColorExtension.swift */,
 				38938E201B68391200E85D2D /* UserListVC.swift */,
 				38C0DFA71B80212A006070DE /* Utils.swift */,
-				63B4340C1B5C49A4008C23F3 /* ViewController.swift */,
 				386FC1AE1B6C703200E1739C /* ViewUserVC.swift */,
 				63B434111B5C49A4008C23F3 /* Assets.xcassets */,
 				63B434131B5C49A4008C23F3 /* LaunchScreen.storyboard */,
 				63B4340E1B5C49A4008C23F3 /* Main.storyboard */,
-				89E891251BE2E64F00C4F372 /* Profile.storyboard */,
 			);
 			path = DEN_watch;
 			sourceTree = "<group>";
@@ -522,7 +510,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */,
-				89E891261BE2E64F00C4F372 /* Profile.storyboard in Resources */,
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
 				3893A0481B72EBEE0016D813 /* FontAwesome.otf in Resources */,
 				63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */,
@@ -567,9 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B4340D1B5C49A4008C23F3 /* ViewController.swift in Sources */,
 				638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */,
-				384A60071B658D3E003B481D /* ProfileVC.swift in Sources */,
 				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
 				3893A0471B72EBEE0016D813 /* Enum.swift in Sources */,
 				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
@@ -580,7 +565,6 @@
 				38C760C91B687E2C005DF586 /* FirstCustomSegueUnwind.swift in Sources */,
 				3893A0491B72EBEE0016D813 /* FontAwesome.swift in Sources */,
 				38C0DFA61B801D33006070DE /* UIColorExtension.swift in Sources */,
-				381A054E1B683D4900108BE1 /* PageVC.swift in Sources */,
 				38938E211B68391200E85D2D /* UserListVC.swift in Sources */,
 				38C760C71B687B3C005DF586 /* FirstCustomSegue.swift in Sources */,
 				6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */,
