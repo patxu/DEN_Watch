@@ -66,7 +66,7 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //Clears userArray
         //Note: This is inefficient because users already in the list must be redownloaded
         //However, with limited number of people this should be fine, but if things look slow, take a look at this
-        userArray = []
+        let newArray:NSMutableArray = []
         let query = PFUser.query()!
         query.whereKey("inDEN", equalTo:true)
         query.findObjectsInBackgroundWithBlock {
@@ -74,9 +74,10 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if error == nil{
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        self.userArray.addObject(object)
+                        newArray.addObject(object)
                     }
                 }
+                self.userArray = newArray
                 self.userTable.reloadData()
             } else {
                 print ("Parse data error: ", error)
@@ -86,10 +87,11 @@ class UserListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func refresh(refreshControl: UIRefreshControl) {
         //Automatically reloads table inside this method
-        loadParseData()
+        
         //If user is refreshing list, good chance user is inside DEN, so do a one time location check to see if user is in DEN
         //This should help with issue where region can take time to register exit/enter
         //appDelegate.locationManager.startUpdatingLocation()
+        loadParseData()
         refreshControl.endRefreshing()
     }
     
