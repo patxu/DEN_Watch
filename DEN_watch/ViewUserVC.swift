@@ -69,7 +69,7 @@ class ViewUserVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
             aboutMeButton.hidden = true
             logoutButton.hidden = true
         }
-        
+        updateTimeFields(self.user)
         imagePicker.delegate = self
         Utils.setPictureBorder(pictureView, width: 5)
     }

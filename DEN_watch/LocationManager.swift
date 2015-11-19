@@ -165,7 +165,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate{
         isRunning = false
     }
     
-    internal func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    internal func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print ("error in locationManager didFaileWithError")
         stopLocationManger()
         
@@ -187,7 +187,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate{
         }
     }
     
-    internal func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]!) {
+    internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let arrayOfLocation = locations as NSArray
         let location = arrayOfLocation.lastObject as! CLLocation
