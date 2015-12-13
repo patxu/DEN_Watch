@@ -43,10 +43,12 @@ class ViewUserVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
             setUserNameAndEmails(self.user, name: nameLabel, email: emailLabel)
             //set about me
             if(self.user["aboutMe"] != nil){
+                aboutMeLabel.lineBreakMode = .ByWordWrapping
+                aboutMeLabel.numberOfLines = 0
                 aboutMeLabel.text = self.user["aboutMe"] as! String!
             }
             else{
-                aboutMeLabel.text = "Hi there!"
+                aboutMeLabel.text = "Hi there, put a short description of yourself here!"
             }
         } else {
             print("Error: no user supplied to view controller!")
