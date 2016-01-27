@@ -36,7 +36,6 @@
 		638273CF1B6472970065DFAB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638273CE1B6472970065DFAB /* LoginVC.swift */; };
 		6385F0481B6D9C4B0054E6FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385F0471B6D9C4B0054E6FE /* LocationManager.swift */; };
 		63A91CD01B72E28900AF6834 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A91CCF1B72E28900AF6834 /* AddressBook.framework */; };
-		63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */; };
 		63B434101B5C49A4008C23F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B4340E1B5C49A4008C23F3 /* Main.storyboard */; };
 		63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B434111B5C49A4008C23F3 /* Assets.xcassets */; };
 		63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B434131B5C49A4008C23F3 /* LaunchScreen.storyboard */; };
@@ -51,6 +50,7 @@
 		63B4344A1B5C49A4008C23F3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434491B5C49A4008C23F3 /* NotificationController.swift */; };
 		63B4344C1B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B4344B1B5C49A4008C23F3 /* Assets.xcassets */; };
 		89D80DD61C5843DC00BB7C59 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89D80DD51C5843DC00BB7C59 /* keys.plist */; };
+		89D80DD81C5844C300BB7C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D80DD71C5844C300BB7C59 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,7 +143,6 @@
 		638DDA381B858F7D00688D0F /* DEN_watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DEN_watch.entitlements; sourceTree = "<group>"; };
 		63A91CCF1B72E28900AF6834 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		63B434071B5C49A4008C23F3 /* DEN_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEN_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B4340F1B5C49A4008C23F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63B434111B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B434141B5C49A4008C23F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -167,6 +166,7 @@
 		63B4344D1B5C49A4008C23F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F0B7551B864116007E915E /* DEN_watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		89D80DD51C5843DC00BB7C59 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		89D80DD71C5844C300BB7C59 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +272,8 @@
 				3893A0451B72EBEE0016D813 /* FontAwesome.otf */,
 				63B434161B5C49A4008C23F3 /* Info.plist */,
 				638273CA1B646E5F0065DFAB /* AlertHelper.swift */,
-				63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */,
 				3893A0441B72EBEE0016D813 /* Enum.swift */,
+				89D80DD71C5844C300BB7C59 /* AppDelegate.swift */,
 				89D80DD51C5843DC00BB7C59 /* keys.plist */,
 				38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */,
 				38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */,
@@ -561,8 +561,8 @@
 				638273A81B645DA80065DFAB /* SignUpVC.swift in Sources */,
 				638273CF1B6472970065DFAB /* LoginVC.swift in Sources */,
 				3893A0471B72EBEE0016D813 /* Enum.swift in Sources */,
-				63B4340B1B5C49A4008C23F3 /* AppDelegate.swift in Sources */,
 				638273CB1B646E5F0065DFAB /* AlertHelper.swift in Sources */,
+				89D80DD81C5844C300BB7C59 /* AppDelegate.swift in Sources */,
 				386FC1AF1B6C703200E1739C /* ViewUserVC.swift in Sources */,
 				638273C41B6462610065DFAB /* CustomObject.m in Sources */,
 				38C0DFA81B80212A006070DE /* Utils.swift in Sources */,
