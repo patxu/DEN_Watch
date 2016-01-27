@@ -50,6 +50,7 @@
 		63B434481B5C49A4008C23F3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434471B5C49A4008C23F3 /* ExtensionDelegate.swift */; };
 		63B4344A1B5C49A4008C23F3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B434491B5C49A4008C23F3 /* NotificationController.swift */; };
 		63B4344C1B5C49A4008C23F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B4344B1B5C49A4008C23F3 /* Assets.xcassets */; };
+		89D80DD61C5843DC00BB7C59 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89D80DD51C5843DC00BB7C59 /* keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		63B4344B1B5C49A4008C23F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B4344D1B5C49A4008C23F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F0B7551B864116007E915E /* DEN_watch WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DEN_watch WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		89D80DD51C5843DC00BB7C59 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				638273CA1B646E5F0065DFAB /* AlertHelper.swift */,
 				63B4340A1B5C49A4008C23F3 /* AppDelegate.swift */,
 				3893A0441B72EBEE0016D813 /* Enum.swift */,
+				89D80DD51C5843DC00BB7C59 /* keys.plist */,
 				38C760C61B687B3C005DF586 /* FirstCustomSegue.swift */,
 				38C760C81B687E2C005DF586 /* FirstCustomSegueUnwind.swift */,
 				3893A0461B72EBEE0016D813 /* FontAwesome.swift */,
@@ -509,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D80DD61C5843DC00BB7C59 /* keys.plist in Resources */,
 				63B434151B5C49A4008C23F3 /* LaunchScreen.storyboard in Resources */,
 				63B434121B5C49A4008C23F3 /* Assets.xcassets in Resources */,
 				3893A0481B72EBEE0016D813 /* FontAwesome.otf in Resources */,
